@@ -1,0 +1,10 @@
+# OpenAI Agents SDK Python dependencies
+# Resolve the exact version at install time from https://github.com/openai/openai-agents-python
+openai-agents>=0.0.0
+
+# The openai package is a transitive dependency of openai-agents.
+# Pin it explicitly for reproducibility.
+openai>=1.0.0
+
+# Optional: for structured output validation
+pydantic>=2.0.0

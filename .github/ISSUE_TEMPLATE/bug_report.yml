@@ -1,0 +1,37 @@
+name: Bug report
+description: Something on the site is broken, wrong, or misleading.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      placeholder: e.g.  /agent-builder-field-guide/platforms/claude-code/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: Be specific. Quote the misleading sentence if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say instead?
+      description: If you have a fix in mind, describe it here.
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source
+      description: Official vendor doc URL that supports the correction.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This is a documentation/content issue
+        - label: This is a build/site issue (broken link, broken layout, etc.)
+        - label: I have searched existing issues and found none that match

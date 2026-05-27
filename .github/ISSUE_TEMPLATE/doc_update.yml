@@ -1,0 +1,32 @@
+name: Doc update
+description: Propose an update or addition to a page.
+title: "[doc] "
+labels: ["documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page to update (or new page path)
+      placeholder: e.g. docs/platforms/gemini-cli.md
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: Describe what you want added, edited, or removed and why.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source
+      description: Link to the vendor doc that justifies the change.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: The proposed change cites an official source.
+        - label: The change does not introduce secrets, PII, or PHI.
+        - label: The change does not introduce background automations or schedulers.

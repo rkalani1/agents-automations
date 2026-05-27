@@ -1,0 +1,29 @@
+{
+  "name": "openai-agents-sdk-typescript-starter",
+  "version": "0.1.0",
+  "description": "Inert starter kit for the OpenAI Agents SDK TypeScript service",
+  "main": "dist/agent.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/agent.js",
+    "dev": "ts-node agent.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openai/agents": ">=0.0.0"
+  },
+  "devDependencies": {
+    "@types/node": ">=18.0.0",
+    "ts-node": ">=10.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "notes": [
+    "Verify the current @openai/agents package name and version on npm before installing.",
+    "Pin all dependency versions for production deployments.",
+    "Run 'npm audit' before each deployment to check for known vulnerabilities."
+  ]
+}

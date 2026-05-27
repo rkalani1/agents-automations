@@ -1,0 +1,6 @@
+# MCP Python SDK
+# Reference: https://github.com/modelcontextprotocol/python-sdk
+mcp>=1.0.0
+
+# Optional: for structured input/output validation
+pydantic>=2.0.0

@@ -1,0 +1,226 @@
+site_name: AI Agent Builder Field Guide
+site_description: A practical, vendor-neutral field guide to designing, configuring, testing, and operating AI agents across Claude, Gemini, ChatGPT/OpenAI, Codex, and adjacent surfaces.
+site_author: AI Agent Builder Field Guide contributors
+site_url: https://example.github.io/agent-builder-field-guide/
+copyright: Released under the MIT License. Trademarks belong to their respective owners.
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/example/agent-builder-field-guide
+
+extra_css:
+  - assets/stylesheets/task-builder.css
+
+extra_javascript:
+  - assets/javascripts/task-builder.js
+
+nav:
+  - Home: index.md
+  - Start Here:
+      - start-here/index.md
+      - What is an agent?: start-here/what-is-an-agent.md
+      - Good tasks for agents: start-here/good-tasks.md
+      - When not to use agents: start-here/when-not-to-use.md
+      - Subscription, app, or API?: start-here/decision-tree.md
+      - Beginner setup path: start-here/beginner-path.md
+      - Power-user setup path: start-here/power-user-path.md
+      - Local-first setup path: start-here/local-first-path.md
+      - Team/org setup path: start-here/team-path.md
+      - Safety baseline: start-here/safety-baseline.md
+  - Platforms:
+      - platforms/index.md
+      - Claude Desktop: platforms/claude-desktop.md
+      - Claude Code (CLI): platforms/claude-code.md
+      - Claude Projects & instructions: platforms/claude-projects.md
+      - Gemini app: platforms/gemini-app.md
+      - Gemini CLI: platforms/gemini-cli.md
+      - Google Antigravity: platforms/antigravity.md
+      - Google AI Studio & Gemini API: platforms/ai-studio.md
+      - ChatGPT (consumer & Projects): platforms/chatgpt.md
+      - Custom GPTs: platforms/custom-gpts.md
+      - OpenAI API & Agents SDK: platforms/openai-api.md
+      - Codex CLI & Codex app: platforms/codex.md
+      - GitHub Copilot coding agent: platforms/copilot.md
+      - Grok / xAI: platforms/grok.md
+      - Local scripts & schedulers: platforms/local-scripts.md
+  - MCP & Connectors:
+      - mcp/index.md
+      - MCP concepts: mcp/concepts.md
+      - Installing MCP servers: mcp/install.md
+      - Writing your own MCP server: mcp/writing.md
+      - Remote/custom connectors: mcp/remote-connectors.md
+      - MCP security: mcp/security.md
+  - Browser & Computer Use:
+      - browser-use/index.md
+      - Surface comparison: browser-use/comparison.md
+      - Anthropic computer use: browser-use/anthropic.md
+      - OpenAI computer use: browser-use/openai.md
+      - browser-use library: browser-use/browser-use.md
+      - Operating boundaries: browser-use/boundaries.md
+  - Orchestration:
+      - orchestration/index.md
+      - Single-agent loops: orchestration/single-agent.md
+      - Multi-agent patterns: orchestration/multi-agent.md
+      - Local-first automation: orchestration/local-first.md
+      - State, memory, handoffs: orchestration/state.md
+  - Evaluation & Safety:
+      - evals/index.md
+      - Building eval sets: evals/eval-sets.md
+      - Red-team workflows: evals/red-team.md
+      - Safety checklists: safety/checklists.md
+      - Human-in-the-loop: safety/hitl.md
+      - Incident response: safety/incidents.md
+  - Task Builder:
+      - task-builder/index.md
+  - Learning path:
+      - learning-path/index.md
+  - Mastery:
+      - mastery/index.md
+      - Any AI tool: mastery/any-ai-tool.md
+      - Claude: https://claude.ai/
+      - ChatGPT: mastery/chatgpt.md
+      - Gemini: mastery/gemini.md
+      - Grok: mastery/grok.md
+      - Perplexity: mastery/perplexity.md
+      - Coding agents: mastery/coding-agents.md
+  - Capability map:
+      - capability-map/index.md
+  - Examples:
+      - examples/index.md
+      - Write a difficult email: examples/write-difficult-email.md
+      - Meeting prep: examples/meeting-prep.md
+      - Weekly status report: examples/weekly-report.md
+      - Research summary with citations: examples/research-summary.md
+      - Personal study plan: examples/study-plan.md
+      - Trip planning: examples/trip-planning.md
+      - Newsletter / inbox triage: examples/newsletter-triage.md
+      - Build a simple website: examples/build-simple-website.md
+      - Build a small app: examples/build-small-app.md
+      - Create a custom assistant: examples/create-custom-assistant.md
+      - Create a native scheduled task: examples/create-native-task.md
+      - Maximize my AI subscription: examples/maximize-my-ai-subscription.md
+      - Workflow in another / unknown AI tool: examples/other-ai-tool-workflow.md
+  - No-code automations:
+      - no-code-automations/index.md
+  - Memory & preferences:
+      - preferences-memory/index.md
+  - Surface router:
+      - surface-router/index.md
+  - Quickstarts:
+      - quickstarts/index.md
+      - First read-only agent: quickstarts/first-read-only-agent.md
+      - First file-editing agent: quickstarts/first-file-editing-agent.md
+      - First coding agent: quickstarts/first-coding-agent.md
+      - First browser agent: quickstarts/first-browser-agent.md
+      - First MCP agent: quickstarts/first-mcp-agent.md
+      - First Grok task: quickstarts/first-grok-task.md
+  - Recipes:
+      - recipes/index.md
+  - Agent Factory:
+      - agent-factory/index.md
+      - Operating model: agent-factory/factory-operating-model.md
+      - Portfolio design: agent-factory/agent-portfolio-design.md
+      - Requirements intake: agent-factory/requirements-intake.md
+      - Candidate ranking: agent-factory/candidate-ranking.md
+      - Prompt-pack generation: agent-factory/prompt-pack-generation.md
+      - Eval generation: agent-factory/eval-generation.md
+      - Red-team generation: agent-factory/red-team-generation.md
+      - Cross-platform porting: agent-factory/cross-platform-porting.md
+      - Launch readiness: agent-factory/launch-readiness.md
+      - Maintenance and drift: agent-factory/maintenance-and-drift.md
+      - Worked example run: agent-factory/worked-example.md
+  - Templates:
+      - template-library/index.md
+      - Agent spec template: template-library/agent-spec.md
+      - Prompt template: template-library/prompt.md
+      - Eval rubric: template-library/eval-rubric.md
+      - Safety checklist: template-library/safety-checklist.md
+      - PRD for an agent: template-library/agent-prd.md
+      - Starter kits index: starter-kits.md
+  - Reference:
+      - Glossary: glossary.md
+      - Plain-English glossary: glossary-plain.md
+      - Model freshness: model-freshness.md
+      - Source map: source-map.md
+      - Source audit: source-audit.md
+      - Roadmap: roadmap.md
+      - User requirements traceability: product-requirements/user-requirements-traceability.md
+      - Changelog: changelog.md
+      - Decision records:
+          - decision-records/index.md
+          - 0001 — MkDocs Material on Pages: decision-records/0001-mkdocs-material.md
+          - 0002 — Sourced and dated: decision-records/0002-sourced-and-dated.md
+          - 0003 — No default schedulers: decision-records/0003-no-default-schedulers.md
+          - 0004 — Recipe nav pattern: decision-records/0004-recipe-nav-pattern.md
+          - ADR template: decision-records/0000-template.md

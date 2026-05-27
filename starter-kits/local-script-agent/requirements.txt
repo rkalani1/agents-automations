@@ -1,0 +1,3 @@
+# Local script agent dependencies
+# Pin exact versions for production deployments.
+openai>=1.0.0

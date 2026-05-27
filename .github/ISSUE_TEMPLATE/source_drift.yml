@@ -1,0 +1,41 @@
+name: Source drift
+description: A vendor renamed, removed, or substantially changed a feature documented here.
+title: "[drift] "
+labels: ["drift", "documentation"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      placeholder: e.g. docs/platforms/antigravity.md
+    validations:
+      required: true
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor and surface
+      placeholder: e.g. Google / Antigravity
+    validations:
+      required: true
+  - type: textarea
+    id: drift
+    attributes:
+      label: What changed?
+      description: Describe the rename/removal/behavior change. Include before/after if you can.
+    validations:
+      required: true
+  - type: input
+    id: official
+    attributes:
+      label: Official source
+      description: Vendor announcement, changelog, or doc URL.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "Cosmetic (renamed feature, same behavior)"
+        - "Material (behavior changed, instructions partially wrong)"
+        - "Critical (instructions actively misleading or unsafe)"
+    validations:
+      required: true

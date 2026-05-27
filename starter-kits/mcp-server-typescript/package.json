@@ -1,0 +1,30 @@
+{
+  "name": "mcp-server-typescript-starter",
+  "version": "0.1.0",
+  "description": "Inert starter kit for an MCP server using the TypeScript SDK",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node --esm server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": ">=18.0.0",
+    "ts-node": ">=10.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "notes": [
+    "Verify the current @modelcontextprotocol/sdk version on npm before installing.",
+    "Pin all dependency versions for production deployments.",
+    "Run 'npm audit' before each deployment."
+  ]
+}

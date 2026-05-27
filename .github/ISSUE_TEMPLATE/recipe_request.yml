@@ -1,0 +1,39 @@
+name: Recipe request
+description: Request a new recipe in docs/recipes/.
+title: "[recipe] "
+labels: ["recipe", "enhancement"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Recipe name
+      placeholder: e.g. "Spreadsheet column-rename agent"
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One-sentence description of what the agent should do.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Preferred platform(s)
+      placeholder: e.g. Claude Code, OpenAI Agents SDK, Gemini CLI
+  - type: textarea
+    id: input
+    attributes:
+      label: Example input
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: The recipe does not require real PII, PHI, or personal data.
+        - label: The recipe can be executed manually before any scheduling.
