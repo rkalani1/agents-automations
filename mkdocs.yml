@@ -2,7 +2,7 @@ site_name: AI Agent Builder Field Guide
 site_description: A practical, vendor-neutral field guide to designing, configuring, testing, and operating AI agents across Claude, Gemini, ChatGPT/OpenAI, Codex, and adjacent surfaces.
 site_author: AI Agent Builder Field Guide contributors
 site_url: https://example.github.io/agent-builder-field-guide/
-copyright: Released under the MIT License. Trademarks belong to their respective owners.
+copyright: 'Released under the MIT License. Trademarks belong to their respective owners.<br>This is a synthetic public demo site for educational and reference purposes only. Not for clinical decision-making or real patient care.<br><a href="https://www.washington.edu/online/terms/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline; margin-right: 15px;">UW Website Terms</a><a href="https://www.washington.edu/online/privacy/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline;">UW Online Privacy Policy</a>'
 
 theme:
   name: material
