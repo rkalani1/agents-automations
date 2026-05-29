@@ -4,7 +4,7 @@ A practical, vendor-neutral field guide to designing, configuring, testing, and 
 
 The site is published with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) on GitHub Pages.
 
-**Live site:** https://example.github.io/agent-builder-field-guide/
+**Live site:** https://rkalani1.github.io/agent-builder-field-guide/
 
 ## Privacy and Safety Boundary
 
