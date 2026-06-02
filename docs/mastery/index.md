@@ -10,6 +10,14 @@ If you don't know which AI to pick, start with [Any AI tool](any-ai-tool.md) —
 
 <div class="grid cards" markdown>
 
+-   :material-chat-outline: **Universal Workbench**
+
+    ---
+
+    Interactive prompt lab, task picker, setups, toolkits, and fixer checklists configured for ChatGPT, Claude, Gemini, Grok, and Perplexity.
+
+    [→ Open the Universal Workbench](universal-workbench.md)
+
 -   :material-chat-outline: **Claude**
 
     ---
