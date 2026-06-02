@@ -7,7 +7,7 @@ body:
     id: page
     attributes:
       label: Affected page
-      placeholder: e.g.  /agents-and-automations/platforms/claude-code/
+      placeholder: e.g.  /agents-automations/platforms/claude-code/
     validations:
       required: true
   - type: textarea

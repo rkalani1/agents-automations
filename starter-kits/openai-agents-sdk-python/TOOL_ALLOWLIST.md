@@ -34,5 +34,5 @@ summarizer_agent = Agent(
 
 Run `pip audit` against `requirements.txt` before each deployment to check for known vulnerabilities in the dependency chain. See the monthly review cadence in `AGENT_SPEC.md`.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/
 Reference: https://github.com/openai/openai-agents-python

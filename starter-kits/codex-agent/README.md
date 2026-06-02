@@ -39,5 +39,5 @@ Codex CLI is OpenAI's terminal-based coding assistant. It reads an `AGENTS.md` f
 
 Codex CLI executes in your local terminal environment. It has access to your filesystem and can run shell commands unless explicitly restricted. This means the `AGENTS.md` constraints and this kit's tool allowlist are behavioral guardrails enforced by the model, not by the OS. For sensitive repositories, run Codex CLI in a container or virtual machine where filesystem access and network egress are restricted at the infrastructure level.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/
 Reference: https://developers.openai.com/codex/cli

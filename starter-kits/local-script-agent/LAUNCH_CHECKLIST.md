@@ -70,4 +70,4 @@ Complete every item before setting `OPERATOR_APPROVED_TO_RUN=1` in any environme
 - [ ] All engineers who run the script have read `INCIDENT_RESPONSE.md`.
 - [ ] Review cadence is scheduled.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/

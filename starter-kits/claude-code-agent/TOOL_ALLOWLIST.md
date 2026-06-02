@@ -30,4 +30,4 @@ Every tool listed here is permitted with the restrictions noted. Tools not liste
 
 Claude Code bundles several tools by default. Use the `CLAUDE.md` file to restrict which tools are active in a given session. Per the setup docs at https://code.claude.com/docs/en/setup, tool permissions can be configured at the project level. Confirm that your session settings match this allowlist before starting a production session.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/

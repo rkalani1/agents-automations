@@ -42,5 +42,5 @@ The script is inert by default. It exits immediately unless `OPERATOR_APPROVED_T
 
 This script can be scheduled with cron, but NEVER enable a cron job without first completing the full launch checklist. A commented-out example crontab line is included in `script.py` for reference only.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/
 

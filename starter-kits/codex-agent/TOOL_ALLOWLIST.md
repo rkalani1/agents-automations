@@ -36,5 +36,5 @@ Because Codex CLI runs in your local terminal, model-level constraints alone are
 
 This defense-in-depth approach ensures that even if the model is manipulated, the blast radius is limited.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/
 Reference: https://developers.openai.com/codex/cli

@@ -4,7 +4,7 @@ A practical, vendor-neutral field guide to designing, configuring, testing, and 
 
 The site is published with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) on GitHub Pages.
 
-**Live site:** https://rkalani1.github.io/agents-and-automations/
+**Live site:** https://rkalani1.github.io/agents-automations/
 
 ## Privacy and Safety Boundary
 
@@ -28,8 +28,8 @@ Every product page lists the **last verified date**, **official sources**, what 
 ## Local development
 
 ```bash
-git clone https://github.com/example/agents-and-automations.git
-cd agents-and-automations
+git clone https://github.com/example/agents-automations.git
+cd agents-automations
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve

@@ -48,4 +48,4 @@ The OpenAI Agents SDK is the official Python framework for building multi-step, 
 - The API key is read from the environment. If it is missing, the script exits with a clear error. Never pass the key as a command-line argument.
 - No network calls are made in the default inert mode.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/

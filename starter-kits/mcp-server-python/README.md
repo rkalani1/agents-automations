@@ -44,4 +44,4 @@ MCP servers run as local processes and communicate with AI clients over stdio or
 
 Reference: https://github.com/modelcontextprotocol/python-sdk
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/

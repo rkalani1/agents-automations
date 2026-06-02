@@ -53,8 +53,8 @@ The site-rendered version of this file lives at [`docs/product-requirements/user
 | 20 | An expert user can convert into evals / red-team / coding-agent / agent spec / API-MCP. | Layer 6 of every example + "Make it robust" sections + Task Builder Expert-expansion panel; [`docs/agent-factory/`](docs/agent-factory/), [`docs/evals/`](docs/evals/), [`starter-kits/`](starter-kits) | complete |
 | 21 | Every page clearly separates free/subscription from developer/API. | Plan-availability tags `Free / Sub / Team / Ent / Dev / API` on every Mastery section, Capability map cell, Example layer, Task Builder output | complete |
 | 22 | Task Builder remains static/local-only with no network calls. | [`docs/assets/javascripts/task-builder.js`](docs/assets/javascripts/task-builder.js) — verified by grep | complete |
-| 23 | `mkdocs build --strict` completes. | Verified locally; CI runs the same command on PR via [`.github/workflows/`](https://github.com/example/agents-and-automations/tree/main/.github/workflows) | complete |
-| 24 | The live GitHub Pages site is verified after deployment. | Live at https://example.github.io/agents-and-automations/. Verified 2026-05-06 post-merge — homepage + all 5 new section indices return HTTP 200 with v0.5 content. Deploy run: <https://github.com/example/agents-and-automations/actions/runs/25432608523> | complete |
+| 23 | `mkdocs build --strict` completes. | Verified locally; CI runs the same command on PR via [`.github/workflows/`](https://github.com/example/agents-automations/tree/main/.github/workflows) | complete |
+| 24 | The live GitHub Pages site is verified after deployment. | Live at https://example.github.io/agents-automations/. Verified 2026-05-06 post-merge — homepage + all 5 new section indices return HTTP 200 with v0.5 content. Deploy run: <https://github.com/example/agents-automations/actions/runs/25432608523> | complete |
 
 ## Verification commands
 

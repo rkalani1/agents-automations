@@ -32,4 +32,4 @@ No tools are passed to the `client.chat.completions.create()` call. The model re
 - Prompt injection attacks can cause the model to produce a misleading summary, but cannot cause it to take external actions.
 - Red-team coverage for injection attacks is provided in `RED_TEAM_CASES.jsonl`.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/

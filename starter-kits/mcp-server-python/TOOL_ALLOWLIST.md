@@ -37,4 +37,4 @@ When you are ready to expand this server beyond the `greet` example, apply these
 
 Each tool exposed by an MCP server becomes an action the AI client can take. A prompt injection in any data the agent processes could cause it to invoke any registered tool. Keeping the tool surface minimal limits the blast radius of a successful injection.
 
-Field Guide:  /agents-and-automations/
+Field Guide:  /agents-automations/
