@@ -37,7 +37,7 @@ This kit is not tied to any runtime, cloud provider, or orchestration framework.
 
 ## Links
 
-- Field Guide home:  /agent-builder-field-guide/
+- Field Guide home:  /agents-and-automations/
 - Platform-specific kits live alongside this one in the `starter-kits/` directory.
 
 ## A Note on Scope

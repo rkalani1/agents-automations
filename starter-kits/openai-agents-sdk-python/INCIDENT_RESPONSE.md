@@ -71,5 +71,5 @@ Questions to answer:
 - If PII or PHI was exposed: follow your organization's breach notification policy.
 - After remediation: publish a post-mortem and file it alongside this document.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/
 Reference: https://github.com/openai/openai-agents-python

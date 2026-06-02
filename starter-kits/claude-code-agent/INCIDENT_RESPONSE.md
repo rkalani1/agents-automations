@@ -74,5 +74,5 @@ Questions to answer:
 - If CI/CD or production systems were affected: notify the engineering leadership and document the blast radius.
 - After remediation: publish a post-mortem. File a copy alongside this document.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/
 Reference: https://code.claude.com/docs/en/setup

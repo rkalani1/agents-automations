@@ -75,4 +75,4 @@ Steps to fix the root cause before re-enabling the agent:
 - If PII was exposed: Follow your organization's breach notification policy. This may include regulatory reporting obligations depending on jurisdiction and data type.
 - After remediation: Publish a post-mortem with a timeline, root cause, and a list of changes made. File a copy alongside this document.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

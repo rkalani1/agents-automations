@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Live URL | https://example.github.io/agent-builder-field-guide/ |
+| Live URL | https://example.github.io/agents-and-automations/ |
 | Source branch | `main` |
 | Build source | GitHub Actions (`build_type=workflow`) |
 | Deploy workflow | [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) |
@@ -10,19 +10,19 @@
 | Last verified | 2026-05-06 |
 | Build status | ✅ Build + deploy green on `main` |
 | Strict build | `mkdocs build --strict` exits 0. The build emits an upstream Material for MkDocs informational banner about the future MkDocs 2.0 release; this is normal output, not a project warning. |
-| Recipe nav pattern | The 41 recipes are accessed via the categorized [Recipes index](/agent-builder-field-guide/recipes/) instead of being listed individually in the top-level nav. The build prints INFO-level notices for these pages — this is intentional. See [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md). |
+| Recipe nav pattern | The 41 recipes are accessed via the categorized [Recipes index](/agents-and-automations/recipes/) instead of being listed individually in the top-level nav. The build prints INFO-level notices for these pages — this is intentional. See [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md). |
 
 ## How to check current status
 
 ```bash
 # Latest workflow runs
-gh run list --repo example/agent-builder-field-guide --limit 5
+gh run list --repo example/agents-and-automations --limit 5
 
 # Pages config
-gh api repos/example/agent-builder-field-guide/pages
+gh api repos/example/agents-and-automations/pages
 
 # Live site headers
-curl -sI  /agent-builder-field-guide/ | head
+curl -sI  /agents-and-automations/ | head
 ```
 
 ## Rollback path
@@ -31,7 +31,7 @@ If a bad commit reaches `main` and the deployment is broken or actively misleadi
 
 ```bash
 # Identify the last-known-good commit
-git -C agent-builder-field-guide log --oneline -20
+git -C agents-and-automations log --oneline -20
 
 # Hard revert with a new commit (preferred — keeps history)
 git revert <bad-sha> [<bad-sha-2> ...]

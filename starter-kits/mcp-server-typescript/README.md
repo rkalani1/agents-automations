@@ -43,4 +43,4 @@ MCP servers run as local processes communicating with AI clients over stdio or H
 
 Reference: https://github.com/modelcontextprotocol/typescript-sdk
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

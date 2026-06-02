@@ -35,4 +35,4 @@ const agent = new Agent({
 
 Run `npm audit` against `package.json` before each deployment. Pin all dependency versions in `package.json` for production deployments. See the monthly review cadence in `AGENT_SPEC.md`.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

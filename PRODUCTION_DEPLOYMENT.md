@@ -1,6 +1,6 @@
 # Production deployment
 
-This document explains how ` /agent-builder-field-guide/` is built and published.
+This document explains how ` /agents-and-automations/` is built and published.
 
 ## Architecture
 
@@ -18,7 +18,7 @@ main branch
 └─────────────────────────────────────────────┘
     │
     ▼
-GitHub Pages (/agent-builder-field-guide/)
+GitHub Pages (/agents-and-automations/)
 ```
 
 ## Components
@@ -51,8 +51,8 @@ These are scoped to the workflow file. No personal access token is used.
 ## Local development
 
 ```bash
-git clone https://github.com/example/agent-builder-field-guide.git
-cd agent-builder-field-guide
+git clone https://github.com/example/agents-and-automations.git
+cd agents-and-automations
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve

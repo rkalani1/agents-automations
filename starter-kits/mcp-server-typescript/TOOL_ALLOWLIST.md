@@ -38,4 +38,4 @@ When expanding this server for real use cases:
 
 Each registered tool is a potential action an AI client can invoke. A prompt injection in any data the agent processes could cause it to call any registered tool. Keeping the surface minimal limits the blast radius of a successful injection to the tools that are actually needed.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

@@ -43,4 +43,4 @@ The `@openai/agents` package is the official TypeScript/JavaScript SDK for build
 - The API key is read from `process.env.OPENAI_API_KEY`. The script exits with a clear error if it is missing.
 - No network calls are made in the default inert mode.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

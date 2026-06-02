@@ -891,4 +891,4 @@ The Task Builder routes this to a **Project + connectors** (read-only) plus a **
 
 ## License
 
-[MIT](https://github.com/example/agent-builder-field-guide/blob/main/LICENSE). All trademarks belong to their respective owners. This guide is independent and is not endorsed by Anthropic, OpenAI, Google, xAI, GitHub, or Microsoft.
+[MIT](https://github.com/example/agents-and-automations/blob/main/LICENSE). All trademarks belong to their respective owners. This guide is independent and is not endorsed by Anthropic, OpenAI, Google, xAI, GitHub, or Microsoft.

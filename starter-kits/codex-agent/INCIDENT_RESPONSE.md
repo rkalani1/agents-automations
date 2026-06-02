@@ -73,5 +73,5 @@ Questions to answer:
 - If secrets or PII were exposed: follow your organization's breach notification policy.
 - After remediation: publish a post-mortem and file it alongside this document.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/
 Reference: https://developers.openai.com/codex/cli

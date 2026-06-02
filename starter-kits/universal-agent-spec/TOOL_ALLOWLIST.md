@@ -24,4 +24,4 @@ An agent that can only read files inside a sandbox directory has a very small bl
 
 When configuring your platform's tool registry, pass only `read_file` in the tools array. If the platform uses a default tool set (e.g., a code interpreter is bundled by default), explicitly disable it for this agent. See the platform-specific starter kits in this repository for concrete configuration examples.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

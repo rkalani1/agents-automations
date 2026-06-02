@@ -44,4 +44,4 @@ Because Antigravity is an actively developed platform with a high rate of change
 
 Antigravity is a rapidly evolving Google platform. Tool names, configuration keys, and API shapes may have changed since this kit was last verified. Always cross-reference against the current codelab at https://codelabs.developers.google.com/getting-started-google-antigravity before deploying. The patterns in this kit (least-privilege tools, HITL gates, eval cases) remain valid regardless of API changes; the specific tool names and configuration syntax may need updating.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

@@ -38,4 +38,4 @@ Do not grant project-wide or filesystem-wide tool access. Scope every tool to th
 
 A summarization agent with read-only access to a bounded directory has a small blast radius if manipulated by a prompt injection in a note file. Removing write access (or HITL-gating it) and blocking all network tools means a successful injection still cannot exfiltrate data or cause lasting harm beyond a misleading summary.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

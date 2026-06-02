@@ -75,5 +75,5 @@ Questions to answer:
 - If PHI or PII was exposed: follow your organization's breach notification policy (which may include regulatory obligations under HIPAA, GDPR, or CCPA depending on data type and jurisdiction).
 - After remediation: publish a post-mortem and file it alongside this document.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/
 Reference: https://codelabs.developers.google.com/getting-started-google-antigravity

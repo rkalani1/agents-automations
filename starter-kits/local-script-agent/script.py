@@ -7,7 +7,7 @@ It never writes outside ./sandbox/.
 It never makes network calls in the inert default mode.
 No real secrets are included — use OPENAI_API_KEY=sk-REPLACE_ME as a placeholder.
 
-Reference:  /agent-builder-field-guide/
+Reference:  /agents-and-automations/
 docs/platforms/local-scripts.md
 
 # manual-only example (do NOT enable without completing the full launch checklist):

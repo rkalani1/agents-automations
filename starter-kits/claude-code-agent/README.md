@@ -39,4 +39,4 @@ Claude Code operates directly in your terminal and has access to the tools you g
 
 Claude Code enforces tool permissions at the session level. Permissions you set in `CLAUDE.md` (such as denying shell access to production directories) are respected by the agent but are not a security boundary enforced by the OS. For sensitive repositories, pair `CLAUDE.md` constraints with OS-level file permissions and, where possible, run Claude Code in a container or sandbox environment.
 
-Field Guide:  /agent-builder-field-guide/
+Field Guide:  /agents-and-automations/

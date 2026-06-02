@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this guide are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The repo-root mirror lives at [`/CHANGELOG.md`](https://github.com/example/agent-builder-field-guide/blob/main/CHANGELOG.md).
+All notable changes to this guide are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The repo-root mirror lives at [`/CHANGELOG.md`](https://github.com/example/agents-and-automations/blob/main/CHANGELOG.md).
 
 ## [0.6.1] — 2026-05-06 — Standalone Claude site
 

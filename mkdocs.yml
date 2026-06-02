@@ -77,7 +77,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/example/agent-builder-field-guide
+      link: https://github.com/example/agents-and-automations
 
 extra_css:
   - assets/stylesheets/task-builder.css

@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "agent-builder-field-guide:task-builder:draft";
+  const STORAGE_KEY = "agents-and-automations:task-builder:draft";
   const VERSION = "0.5.0";
 
   function $(sel, root) { return (root || document).querySelector(sel); }
