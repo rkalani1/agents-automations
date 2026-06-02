@@ -150,7 +150,7 @@ nav:
   - Mastery:
       - mastery/index.md
       - Any AI tool: mastery/any-ai-tool.md
-      - Claude: https://claude.ai/
+      - Claude: mastery/claude.md
       - ChatGPT: mastery/chatgpt.md
       - Gemini: mastery/gemini.md
       - Grok: mastery/grok.md

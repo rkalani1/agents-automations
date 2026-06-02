@@ -16,7 +16,7 @@ If you don't know which AI to pick, start with [Any AI tool](any-ai-tool.md) —
 
     Step-by-step setup for beginners, then Projects, Memory, Artifacts, Skills, connectors, Claude Code, and API habits.
 
-    [→ Open Claude](https://claude.ai/)
+    [→ Claude mastery](claude.md)
 
 -   :material-chat-outline: **ChatGPT**
 
