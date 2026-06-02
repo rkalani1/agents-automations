@@ -19,11 +19,12 @@ document$.subscribe(function () {
       ],
       toolkitPluginsTabName: "Custom GPTs",
       toolkit: [
-        { title: "Literature Custom GPT", desc: "Searches PubMed, bioRxiv, and medRxiv using custom GPT Actions.", tags: ["ChatGPT Plus", "Custom Action", "Research"] },
+        { title: "Codex CLI", desc: "OpenAI's terminal-based AI coding assistant for inspecting codebases and running tests.", tags: ["CLI", "Codex", "Code"] },
+        { title: "OpenAI Agents SDK", desc: "Build hosted, autonomous multi-agent loops and tool calls programmatically.", tags: ["SDK", "OpenAI", "Agents"] },
         { title: "ChatGPT Workspace Sidebars", desc: "Side panels inside Microsoft Office Online (Word, PPT, Excel) for drafting.", tags: ["Microsoft Office", "Add-in", "Office"] },
+        { title: "PubMed Custom GPT Action", desc: "Searches PubMed, bioRxiv, and medRxiv using custom GPT Actions.", tags: ["ChatGPT Plus", "Custom Action", "Research"] },
         { title: "SQLite / Database Action", desc: "Connects Custom GPTs to internal relational databases using SQL endpoints.", tags: ["Database", "GPT Action", "Data"] },
-        { title: "OpenAI Agents SDK", desc: "Build hosted, autonomous agent loops using Python or TypeScript.", tags: ["SDK", "NodeJS / Python", "CLI"] },
-        { title: "ChatGPT Canvas Actions", desc: "Inline document revisions, tone adjusting, and coding editor inside Chat.", tags: ["ChatGPT Plus", "GPT-4o", "Claude-like Canvas"] }
+        { title: "Google Workspace Action", desc: "Connects Custom GPTs to Gmail, Calendar, Sheets, and Drive via OAuth.", tags: ["GPT Action", "Workspace", "Office"] }
       ],
       workedExamples: [
         {
@@ -224,11 +225,21 @@ After editing, output the code change and write a test case I can run.`
       ],
       toolkitPluginsTabName: "Claude Plugins",
       toolkit: [
-        { title: "PubMed MCP Server", desc: "Connects Claude to PubMed API for clinical literature searches.", tags: ["MCP", "npx pubmed-mcp-server", "Research"] },
-        { title: "BGPT MCP Server", desc: "Connects Claude to BioGPT models for clinical synthesis.", tags: ["MCP", "npx bgpt-mcp-server", "Research"] },
-        { title: "SQLite MCP Server", desc: "Connects Claude Code to local database files.", tags: ["MCP", "npx @modelcontextprotocol/server-sqlite", "Data"] },
-        { title: "Brave Search MCP", desc: "Connects Claude to Brave Search API for live web queries.", tags: ["MCP", "npx @modelcontextprotocol/server-brave-search", "Research"] },
-        { title: "Claude Code", desc: "Local CLI agent for editing files and running project tests.", tags: ["CLI", "npm i -g @anthropic-ai/claude-code", "CLI"] }
+        { title: "Google Workspace CLI (google-workspace-cli)", desc: "Enables secure automation across Gmail, Google Calendar, Sheets, Docs, and Slides.", tags: ["CLI", "Workspace", "Office"] },
+        { title: "Maestro Orchestration (maestro)", desc: "Multi-step workflow management enforcing code quality, performance audits, compliance reviews, and debugging. Skills: orchestrate, execute, perf-check.", tags: ["CLI", "Maestro", "Code"] },
+        { title: "Science Superpowers (science-superpowers)", desc: "Enforces scientific rigor for data exploration, statistical analysis, literature surveys, and pre-registering analysis plans.", tags: ["CLI", "Science", "Research"] },
+        { title: "Signum (signum)", desc: "An evidence-driven development pipeline that tests code changes against a contract and audits changes with multiple model checkpoints.", tags: ["CLI", "Signum", "Code"] },
+        { title: "Claude Code", desc: "Anthropic's official local command-line agent for repository editing, checks, and running project tests.", tags: ["CLI", "Claude Code", "Code"] },
+        { title: "PubMed MCP Server", desc: "Connects Claude to PubMed API for clinical literature searches.", tags: ["MCP", "PubMed", "Research"] },
+        { title: "BGPT MCP Server", desc: "Connects Claude to Biomedical BioGPT models for clinical synthesis.", tags: ["MCP", "bgpt", "Research"] },
+        { title: "medRxiv MCP Server", desc: "Retrieves preprints in clinical medicine and epidemiology.", tags: ["MCP", "medrxiv", "Research"] },
+        { title: "NICE Guidelines MCP", desc: "Access to evidence-based clinical guidance and medical guidelines.", tags: ["MCP", "Guidelines", "Research"] },
+        { title: "Helium MCP Server", desc: "Financial news, options prices, source bias, memes, and trading strategies.", tags: ["MCP", "Helium", "Research"] },
+        { title: "SQLite MCP Server", desc: "Connects Claude Code and desktop to local database query engine for medical data sets.", tags: ["MCP", "sqlite", "Data"] },
+        { title: "PostgreSQL MCP Server", desc: "Database connection for larger neuroepidemiology datasets.", tags: ["MCP", "postgres", "Data"] },
+        { title: "Puppeteer / Browser MCP", desc: "Browser automation to scrape tables or capture page layouts.", tags: ["MCP", "puppeteer", "Research"] },
+        { title: "Brave Search MCP", desc: "Connects Claude to Brave Search API for live web queries and fact-checking.", tags: ["MCP", "brave-search", "Research"] },
+        { title: "Official Claude Code Plugins", desc: "Loaded plugins: code-review, code-simplifier, feature-dev, coderabbit, chrome-devtools-mcp, context7, exa, firecrawl, desktop-commander, commit-commands, hookify, github.", tags: ["Plugin", "Claude Code", "Code"] }
       ],
       workedExamples: [
         {
@@ -425,11 +436,15 @@ Before editing:
       ],
       toolkitPluginsTabName: "Gems & Extensions",
       toolkit: [
-        { title: "Google Workspace side panels", desc: "Gemini built natively into Google Docs, Sheets, and Gmail sidebar.", tags: ["Google Workspace", "Sidebar Integration", "Office"] },
-        { title: "Google Antigravity CLI", desc: "Google's internal-to-external agent command line tool for codebases.", tags: ["CLI", "Antigravity Dev", "CLI"] },
-        { title: "Gemini CLI", desc: "Simple command-line tool for feeding terminal output into Gemini API.", tags: ["CLI", "NodeJS / Go", "CLI"] },
-        { title: "Google AI Studio", desc: "Prototyping playground supporting system prompts, temperature, and JSON output.", tags: ["Web Playground", "Developer API", "Data"] },
-        { title: "Vertex AI / Agent Builder", desc: "Enterprise platform for deploying custom retrieval-augmented agents.", tags: ["Google Cloud", "Enterprise Agents", "Agents"] }
+        { title: "Google Workspace CLI (google-workspace-cli)", desc: "Enables secure automation across Gmail, Google Calendar, Sheets, Docs, and Slides.", tags: ["CLI", "Workspace", "Office"] },
+        { title: "Maestro Orchestration (maestro)", desc: "Multi-step workflow management enforcing code quality, performance audits, compliance reviews, and debugging. Skills: orchestrate, execute, perf-check.", tags: ["CLI", "Maestro", "Code"] },
+        { title: "Science Superpowers (science-superpowers)", desc: "Enforces scientific rigor for data exploration, statistical analysis, literature surveys, and pre-registering analysis plans.", tags: ["CLI", "Science", "Research"] },
+        { title: "Signum (signum)", desc: "An evidence-driven development pipeline that tests code changes against a contract and audits changes with multiple model checkpoints.", tags: ["CLI", "Signum", "Code"] },
+        { title: "Google Antigravity CLI", desc: "Google's power agent tool for running codebase modifications, running tests, and executing terminal commands.", tags: ["CLI", "Antigravity", "Code"] },
+        { title: "Gemini CLI", desc: "Simple command-line helper for piping script outputs directly to Gemini API.", tags: ["CLI", "Gemini", "CLI"] },
+        { title: "Google Workspace Side Panels", desc: "Gemini built natively into Google Docs, Sheets, Slides, and Gmail sidebar panels.", tags: ["Google Workspace", "Sidebar", "Office"] },
+        { title: "Google AI Studio", desc: "Developer playground with massive 2M token context window, system prompts, and temperature controls.", tags: ["Studio", "AI Studio", "Data"] },
+        { title: "Vertex AI / Agent Builder", desc: "Enterprise platform for deploying custom retrieval-augmented agents and search engines.", tags: ["Google Cloud", "Enterprise", "Agents"] }
       ],
       workedExamples: [
         {
@@ -609,9 +624,10 @@ Structure the instructions:
       ],
       toolkitPluginsTabName: "Grok Console",
       toolkit: [
+        { title: "Grok Build (Grok Console)", desc: "Build tools, python script actions, and sqlite database integrations directly in the Grok dev workspace.", tags: ["CLI", "Grok Build", "Code"] },
         { title: "X Search Panel", desc: "Grok's native sidebar on X.com for summarization of trending topics and live posts.", tags: ["X.com Integration", "Real-time Data", "Research"] },
-        { title: "xAI API Client", desc: "Developer clients for calling Grok 2/3 models programmatically.", tags: ["xAI API", "Python / NodeJS", "CLI"] },
-        { title: "Flux Image Generation", desc: "Natively integrated image generator inside Grok Chat for visual ideas.", tags: ["Image Generation", "Flux", "Design"] }
+        { title: "xAI API Client", desc: "Developer client endpoints for calling Grok 2/3 models programmatically.", tags: ["xAI API", "Python / NodeJS", "CLI"] },
+        { title: "Flux Image Generation", desc: "Natively integrated image generator inside Grok Chat for visual ideas and layouts.", tags: ["Image Generation", "Flux", "Design"] }
       ],
       workedExamples: [
         {
@@ -743,159 +759,9 @@ Provide:
     "systemPrompt": "You are a concise researcher utilizing real-time X search results."
   }
 }`
-    },
-    perplexity: {
-      name: "Perplexity",
-      lede: "Start with one real task. Copy a strong prompt, choose the right Perplexity surface, and improve the result.",
-      officialLinks: [
-        { text: "Open Perplexity", url: "https://perplexity.ai/" }
-      ],
-      setupCards: [
-        { title: "Sign in once", desc: "Log in to your Perplexity account to track search history, files, and spaces.", links: '<a href="https://perplexity.ai/">Open Perplexity</a>' },
-        { title: "Configure Profile", desc: "Fill out your AI Profile in settings to teach Perplexity your default tone, location, and role.", links: '<a href="https://perplexity.ai/">Perplexity profile</a>' },
-        { title: "Create a Space", desc: "Spaces let you upload custom reference documents and set shared system instructions for research threads.", links: '<a href="https://support.perplexity.ai/en/articles/123123-spaces-guide">Spaces Guide</a>' },
-        { title: "Verify Citations", desc: "Always check the bracketed footnote numbers [1], [2] to verify Perplexity's sources.", links: '<a href="https://support.perplexity.ai/">Citations Help</a>' }
-      ],
-      toolkitPluginsTabName: "Perplexity API",
-      toolkit: [
-        { title: "Perplexity Spaces", desc: "Collaborative research directories where you store files and system instructions.", tags: ["Spaces", "Context Files", "Research"] },
-        { title: "Perplexity Pages", desc: "Generate and publish clean, structured reports with images and links directly from research threads.", tags: ["Pages", "Content Builder", "Design"] },
-        { title: "Perplexity API", desc: "Developer endpoints for searching and retrieving web results in your own scripts.", tags: ["API", "Sonar models", "CLI"] }
-      ],
-      workedExamples: [
-        {
-          type: "Meeting note",
-          bad: "Summarize this meeting note.",
-          badReason: "no focus on sources or citation verification.",
-          fixed: `Summarize this meeting note:
-[PASTE NOTE]
-
-Goal:
-Identify key deliverables.
-
-Return:
-- 3 deliverables (with owners).
-- Any open questions.
-- A summary checklist.`
-        },
-        {
-          type: "Code change",
-          bad: "Refactor this file.",
-          badReason: "no scope, check command, or smallest-change rule.",
-          fixed: `Help me refactor this script:
-[PASTE FILE]
-
-Before writing code:
-- Explain what the script does.
-- Propose the smallest change to resolve [PROBLEM].
-
-After writing code:
-- Output the modified functions only.
-- List what tests I should run.`
-        }
-      ],
-      labSurfaces: [
-        { key: "chat", name: "Search Chat" },
-        { key: "space", name: "Spaces" },
-        { key: "page", name: "Pages" },
-        { key: "pro", name: "Pro Search" },
-        { key: "mobile", name: "Mobile App" }
-      ],
-      surfaceFilterLabels: [
-        { key: "all", name: "All" },
-        { key: "research", name: "Research" },
-        { key: "files", name: "Files" }
-      ],
-      surfacesGrid: [
-        { groups: ["research"], badge: "Chat", title: "Search Chat", desc: "Default search chat with conversational synthesis and citations.", actionHtml: '<a class="button small primary" href="https://perplexity.ai/">Open Perplexity</a>' },
-        { groups: ["files", "research"], badge: "Spaces", title: "Spaces (Workspaces)", desc: "Create persistent research scopes with custom files and system guidelines.", actionHtml: '<a class="button small primary" href="https://perplexity.ai/">Create Space</a>' },
-        { groups: ["draft", "research"], badge: "Pages", title: "Pages (Publisher)", desc: "Convert research threads into beautifully structured web articles and reports.", actionHtml: '<a class="button small" href="https://perplexity.ai/">Create Page</a>' },
-        { groups: ["research"], badge: "Pro Search", title: "Pro Search (Comet)", desc: "Deep multi-step search routing that runs multiple sub-queries to reconcile details.", actionHtml: '<a class="button small" href="https://perplexity.ai/">Pro Search</a>' }
-      ],
-      decisionRules: [
-        { title: "Chat or Space?", desc: "<strong>Search Chat</strong> for quick one-off lookups. <strong>Space</strong> when you research a specific topic with reference papers." },
-        { title: "Pro Search or Quick?", desc: "<strong>Quick Search</strong> for simple facts. <strong>Pro Search</strong> when the task requires reconciling multiple sources." }
-      ],
-      glossary: [
-        { term: "Spaces", def: "Collaborative folders containing reference files and system prompts that limit search scope." },
-        { term: "Pages", def: "A feature that converts research notes into editable, visual, and shareable web pages." },
-        { term: "Pro Search", def: "Perplexity's deep search engine that executes multiple web queries to compile comprehensive details." },
-        { term: "AI Profile", def: "Saved preferences for location, role, and tone that Perplexity uses across all searches." }
-      ],
-      modelFit: {
-        title: "Model fit",
-        copy: "Use Default model for fast search. Switch to Claude Sonnet 4.6 or GPT-4o in Pro settings for better writing.",
-        links: [
-          { text: "Perplexity Settings", url: "https://perplexity.ai/" }
-        ]
-      },
-      modelFitHints: {
-        default: "Use Default for fast search. Switch to Sonnet 4.6 in Pro mode for creative writing and summaries.",
-        chat: "Use Default for quick lookup. Use Sonnet 4.6 for detailed, structured synthesis.",
-        space: "Use Sonnet 4.6 within Spaces for writing reports, or GPT-4o for code tasks.",
-        page: "Use Sonnet 4.6 to draft published reports and structured pages.",
-        pro: "Pro Search routes queries through multiple steps; use Default or Sonnet 4.6 as the final generator.",
-        mobile: "Use Default model on mobile for fast, on-the-go searches."
-      },
-      outputHints: {
-        useful: "a useful answer with a clear next step",
-        email: "an email draft with subject line, body, and optional shorter version",
-        document: "a structured document with headings, bullets, and a review checklist",
-        slides: "a slide-by-slide outline with title, key point, and speaker note for each slide",
-        spreadsheet: "a spreadsheet-friendly table, formula explanation, or analysis checklist",
-        design: "a layout blueprint with color codes, target audience, and usability checks",
-        decision: "a decision memo with options, tradeoffs, recommendation, and risks",
-        code: "a small code change path with files to inspect, edit steps, and tests to run",
-        agent: "an agent workflow brief with trigger, context, steps, allowed actions, checks, and handoff"
-      },
-      fixData: {
-        vague: { title: "Too vague", next: "Perplexity sounds reasonable but you still cannot act on the answer.", prompt: "Make your last answer specific enough that I can act on it today. Revise it with concrete steps, examples, clear decision points, and what I should do first. Keep the language simple." },
-        wrong: { title: "Possibly wrong", next: "A fact, calculation, or interpretation may be incorrect.", prompt: "Review your last answer for possible errors. Do not defend the answer. Compare each claim to the sources cited and output a corrected version." },
-        long: { title: "Too long", next: "The answer is useful but too hard to scan quickly.", prompt: "Shorten your last answer. Give me the shortest useful version, the three details I should not miss, and remove repetition." },
-        technical: { title: "Too technical", next: "The answer assumes too much background knowledge.", prompt: "Rewrite your last answer for a beginner. Use everyday language, define necessary terms in one sentence, replace jargon with examples, and keep steps practical." },
-        format: { title: "Wrong format", next: "The content is good but the visual layout is not useful.", prompt: "Reformat your last answer into this structure: [PASTE THE FORMAT: table, checklist, email, memo, slides, steps, or bullets]. Keep only the content that supports that format." },
-        stuck: { title: "Needs questions", next: "Perplexity needs more context but did not ask for it.", prompt: "Pause and ask me the three questions that would most improve your answer. Explain why each matters in one short phrase." },
-        evidence: { title: "Weak evidence", next: "Facts matter and you need to know what the claims rest on.", prompt: "Strengthen the evidence in your last answer. Separate confirmed facts in the material I provided from reasonable inferences, and list what I should verify." },
-        action: { title: "Not actionable", next: "The answer explains the topic but does not help you move.", prompt: "Turn your last answer into an action checklist. For each item, include the action, why it matters, and what good completion looks like." },
-        tone: { title: "Tone is off", next: "The answer is too stiff, too casual, too forceful, or not right for the audience.", prompt: "Rewrite your last answer for this audience: [AUDIENCE] using this tone: [WARM, DIRECT, EXECUTIVE, BEGINNER-FRIENDLY]. Remove anything that sounds unnatural." }
-      },
-      powerMoves: [
-        { title: "Pro Search Comet", desc: "Turn on Pro Search mode to let Perplexity run recursive sub-queries and reconcile conflicting details." },
-        { title: "Page Publishing", desc: "Convert any search thread into a published Perplexity Page with headings, citations, and images." }
-      ],
-      agentLanes: [
-        { badge: "Beginner", title: "Space Organizer", desc: "Set up a Space loaded with specific files and search guidelines to act as a custom research scope." },
-        { badge: "Developer", title: "Perplexity API Client", desc: "Call Perplexity's Sonar models to retrieve search-grounded text outputs inside scripts." }
-      ],
-      agentLinks: [
-        { text: "Perplexity API Docs", url: "https://docs.perplexity.ai/" }
-      ],
-      promptsList: [
-        {
-          summary: "Market research search query",
-          prompt: `Research the current state of:
-[MARKET, TOPIC, OR PRODUCT]
-
-Search requirements:
-- Use Pro Search.
-- Find at least 5 different sources.
-- Reconcile contradictory statistics.
-
-Output format:
-1. Executive Summary.
-2. Comparative Table.
-3. Footnote Citations.`
-        }
-      ],
-      mcpConfig: `{
-  "perplexityAPI": {
-    "model": "sonar",
-    "temperature": 0.1,
-    "systemPrompt": "You are a precise search coordinator. Always cite web URLs as footnotes."
-  }
-}`
-    }
+    
   };
+
 
   // Selectors
   const modelTabs = Array.from(document.querySelectorAll(".universal-workbench .model-tab"));
@@ -1333,22 +1199,6 @@ After I answer, propose a short, edit-ready instructions block. Keep it under 12
         agent: "xAI API Console.",
         lectureToPpt: "Grok Chat",
         infographic: "Flux Image Gen in Grok"
-      },
-      perplexity: {
-        email: "Perplexity Chat.",
-        document: "Perplexity Spaces or Pages.",
-        slides: "Perplexity Spaces.",
-        spreadsheet: "Perplexity Spaces.",
-        design: "Perplexity Pages layout preview.",
-        research: "Pro Search in Perplexity.",
-        connect: "Perplexity API client console.",
-        browser: "Perplexity Chrome extension.",
-        cowork: "Perplexity API script.",
-        meeting: "Perplexity Chat.",
-        code: "Perplexity Spaces (coding mode).",
-        agent: "Perplexity API integration.",
-        lectureToPpt: "Perplexity Spaces",
-        infographic: "Perplexity Pages"
       }
     };
 

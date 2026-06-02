@@ -120,7 +120,7 @@ The [Mastery index](index.md) has a capability matrix. If your current app is mi
 - [ChatGPT](chatgpt.md) — Custom GPTs, Tasks, Codex.
 - [Gemini](gemini.md) — Gems, Workspace context, Antigravity.
 - [Grok](grok.md) — consumer Grok, Grok on X, xAI API.
-- [Perplexity](perplexity.md) — Spaces, Pages, Comet.
+- [Any AI tool](any-ai-tool.md) — Spaces, Pages, Comet.
 - [Coding agents](coding-agents.md) — Copilot, Claude Code, Codex CLI.
 
 ## Guided exercise — 10 minutes

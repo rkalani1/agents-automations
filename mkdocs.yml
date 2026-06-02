@@ -157,7 +157,6 @@ nav:
       - ChatGPT: mastery/chatgpt.md
       - Gemini: mastery/gemini.md
       - Grok: mastery/grok.md
-      - Perplexity: mastery/perplexity.md
       - Coding agents: mastery/coding-agents.md
   - Capability map:
       - capability-map/index.md

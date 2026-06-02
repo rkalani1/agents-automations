@@ -50,14 +50,6 @@ If you don't know which AI to pick, start with [Any AI tool](any-ai-tool.md) —
 
     [→ Grok mastery](grok.md)
 
--   :material-magnify: **Perplexity**
-
-    ---
-
-    Ask → Spaces → Pages/Collections → Comet/agent modes → Perplexity API.
-
-    [→ Perplexity mastery](perplexity.md)
-
 -   :material-code-tags: **Coding agents**
 
     ---
@@ -93,18 +85,18 @@ Every mastery page uses the same shape so you can compare across products:
 
 This is an opinionated, simplified comparison. Specifics drift; check the per-product mastery page for the current source-cited list.
 
-| Capability | ChatGPT | Claude | Gemini | Grok | Perplexity | Copilot |
-|---|---|---|---|---|---|---|
-| Plain chat | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (Copilot Chat) |
-| Memory / saved instructions | ✓ | ✓ | ✓ | partial | ✓ | repo-level (`copilot-instructions.md`) |
-| Project / workspace | ✓ (Projects) | ✓ (Projects) | partial (Workspace context) | partial (Spaces) | ✓ (Spaces) | the repo |
-| Custom assistant | ✓ (Custom GPTs) | ✓ (Project + knowledge) | ✓ (Gems) | partial | partial (Space + system prompt) | partial (Extensions) |
-| Skill / packaged behavior | GPT Action | ✓ Claude Skills (`SKILL.md`) | Gem + files | — | Pages | — |
-| Native scheduled tasks | ✓ (Tasks, where available) | partial | partial (Advanced) | — | — | — |
-| Coworker / agent mode | ✓ (where available) | ✓ Computer use (Desktop) | ✓ (where available) | partial | ✓ (Comet, where available) | ✓ Copilot cloud agent |
-| Coding agent | Codex (cloud) | Claude Code (CLI) | Antigravity / Gemini CLI | — | — | Copilot cloud agent |
-| Browser/computer use | ✓ Atlas / agent (where available) | ✓ Computer use | partial | — | ✓ Comet (where available) | — |
-| Developer / API | OpenAI API | Claude API | Gemini API | xAI API | Perplexity API | GitHub Models |
+| Capability | ChatGPT | Claude | Gemini | Grok | Copilot |
+|---|---|---|---|---|---|
+| Plain chat | ✓ | ✓ | ✓ | ✓ | ✓ (Copilot Chat) |
+| Memory / saved instructions | ✓ | ✓ | ✓ | partial | repo-level (`copilot-instructions.md`) |
+| Project / workspace | ✓ (Projects) | ✓ (Projects) | partial (Workspace context) | partial (Spaces) | the repo |
+| Custom assistant | ✓ (Custom GPTs) | ✓ (Project + knowledge) | ✓ (Gems) | partial | partial (Extensions) |
+| Skill / packaged behavior | GPT Action | ✓ Claude Skills (`SKILL.md`) | Gem + files | — | — |
+| Native scheduled tasks | ✓ (Tasks, where available) | partial | partial (Advanced) | — | — |
+| Coworker / agent mode | ✓ (where available) | ✓ Computer use (Desktop) | ✓ (where available) | partial | ✓ Copilot cloud agent |
+| Coding agent | Codex (cloud) | Claude Code (CLI) | Antigravity / Gemini CLI | — | Copilot cloud agent |
+| Browser/computer use | ✓ Atlas / agent (where available) | ✓ Computer use | partial | — | — |
+| Developer / API | OpenAI API | Claude API | Gemini API | xAI API | GitHub Models |
 
 ## What the tracks teach in plain English
 
@@ -126,7 +118,6 @@ This is an opinionated, simplified comparison. Specifics drift; check the per-pr
 | Claude | You want connectors to many SaaS apps | ChatGPT Projects |
 | Gemini | You need long-form reasoning + Artifacts | Claude |
 | Grok | You need structured outputs / programmatic agents | OpenAI / Gemini / Anthropic API |
-| Perplexity | You want to draft long documents in the AI itself | ChatGPT or Claude (writing surfaces are stronger) |
 | Copilot | Task is non-code | ChatGPT / Claude / Gemini |
 
 The [Surface router](../surface-router/index.md) covers the underlying decision matrix in long form.

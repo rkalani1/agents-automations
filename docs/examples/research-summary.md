@@ -66,7 +66,7 @@ See [No-code automations](../no-code-automations/index.md#example-4-research-wat
 
 ## Layer 6 — Developer / API (optional)
 
-Perplexity API with `sonar-*` models gives you the same retrieval programmatically. See [Mastery — Perplexity § Expert](../mastery/perplexity.md). Use only if you need automation; subscription Perplexity is the better tool for most users.
+Perplexity API with `sonar-*` models gives you the same retrieval programmatically. See [Mastery — Perplexity § Expert](../mastery/any-ai-tool.md). Use only if you need automation; subscription Perplexity is the better tool for most users.
 
 ## Make it reusable
 
@@ -93,6 +93,6 @@ Perplexity API with `sonar-*` models gives you the same retrieval programmatical
 
 ## See also
 
-- [Mastery — Perplexity](../mastery/perplexity.md)
+- [Mastery — Perplexity](../mastery/any-ai-tool.md)
 - [No-code automations — Research watch](../no-code-automations/index.md#example-4-research-watch-sub)
 - [Capability map — Research with citations](../capability-map/index.md#research-and-sharing)

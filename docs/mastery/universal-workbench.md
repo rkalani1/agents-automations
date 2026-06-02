@@ -12,7 +12,6 @@ A model-agnostic playground and setup guide. Select your preferred AI model at t
     <button type="button" class="choice model-tab" data-model="claude" aria-selected="false" role="tab">Claude</button>
     <button type="button" class="choice model-tab" data-model="gemini" aria-selected="false" role="tab">Gemini</button>
     <button type="button" class="choice model-tab" data-model="grok" aria-selected="false" role="tab">Grok</button>
-    <button type="button" class="choice model-tab" data-model="perplexity" aria-selected="false" role="tab">Perplexity</button>
   </div>
 
   <section class="hero hero-workbench" id="start" aria-labelledby="hero-title">

@@ -90,5 +90,5 @@ Not a great fit. Trip planning involves volatile real-world facts; subscription 
 
 ## See also
 
-- [Mastery — Perplexity](../mastery/perplexity.md)
+- [Mastery — Perplexity](../mastery/any-ai-tool.md)
 - [Memory and preferences](../preferences-memory/index.md)
