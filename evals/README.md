@@ -1,6 +1,6 @@
 # Evals
 
-This directory contains the evaluation bank for the AI Agent Builder Field Guide. It includes golden (correctness) eval cases, red-team (adversarial) eval cases, scoring rubrics, and platform-specific usage guides.
+This directory contains the evaluation bank for the Agents and Automations. It includes golden (correctness) eval cases, red-team (adversarial) eval cases, scoring rubrics, and platform-specific usage guides.
 
 All eval data is fully synthetic. No real PII, PHI, API tokens, or secrets appear anywhere in these files.
 
@@ -170,3 +170,4 @@ done
 3. Validate the file after adding.
 4. Update the case count in this README.
 5. If a new attack class is needed for red-team cases, also add a section to red-team-rubric.md.
+

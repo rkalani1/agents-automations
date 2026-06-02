@@ -1,6 +1,6 @@
 # Recipes
 
-This section is a practitioner-focused catalog of 41 agent recipes for the AI Agent Builder Field Guide. Each recipe is a self-contained, copy-pasteable blueprint that covers platform selection, permissions, a filled agent spec, setup steps, a ready-to-use prompt, eval cases, red-team probes, and a safe-launch checklist.
+This section is a practitioner-focused catalog of 41 agent recipes for the Agents and Automations. Each recipe is a self-contained, copy-pasteable blueprint that covers platform selection, permissions, a filled agent spec, setup steps, a ready-to-use prompt, eval cases, red-team probes, and a safe-launch checklist.
 
 Recipes are vendor-neutral where possible. Where a specific platform is recommended, at least one alternate is listed. No recipe requires production credentials to read, and all examples use synthetic data.
 
@@ -116,3 +116,4 @@ Each recipe is rated by drift risk (low / medium / high), reflecting how quickly
 Recipes are designed to be read in any order. If you are new to agent building, start with [email-triage.md](email-triage.md) or [mcp-filesystem-assistant.md](mcp-filesystem-assistant.md) — both use narrow permissions and produce no side effects without explicit human action. The "Agent factory utilities" section is useful once you have one or two agents running and want to scale your process.
 
 All recipes follow the same structure so you can scan quickly: the "Filled agent spec" section contains the single most important artifact for handing off to a teammate or to an LLM assistant that will help you build the agent.
+

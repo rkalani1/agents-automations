@@ -135,7 +135,7 @@ All notable changes to this guide are documented here. Format loosely follows [K
 ## [0.1.0] — 2026-05-06
 
 ### Added
-- Initial public release of the **AI Agent Builder Field Guide**.
+- Initial public release of the **Agents and Automations**.
 - Start Here section: what an agent is, good/bad tasks, decision tree, four setup paths, safety baseline.
 - Platform setup guides for Claude Desktop, Claude Code, Claude Projects, Gemini app, Gemini CLI, Antigravity, Google AI Studio, ChatGPT, Custom GPTs, OpenAI API/Agents SDK, Codex CLI, GitHub Copilot cloud agent, and local scripts/schedulers.
 - MCP section: concepts, installation, writing servers, remote/custom connectors, security.
@@ -148,3 +148,4 @@ All notable changes to this guide are documented here. Format loosely follows [K
 
 ### Source verification
 - All product pages verified against the official sources listed in [`source-map.md`](source-map.md) on 2026-05-06.
+

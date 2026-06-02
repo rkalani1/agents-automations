@@ -1,7 +1,7 @@
-site_name: AI Agent Builder Field Guide
-site_description: A practical, vendor-neutral field guide to designing, configuring, testing, and operating AI agents across Claude, Gemini, ChatGPT/OpenAI, Codex, and adjacent surfaces.
-site_author: AI Agent Builder Field Guide contributors
-site_url: https://example.github.io/agent-builder-field-guide/
+site_name: Agents and Automations
+site_description: A practical, vendor-neutral portal for designing, configuring, testing, and operating AI agents and workflow automations across Claude, Gemini, ChatGPT/OpenAI, and adjacent surfaces.
+site_author: Agents and Automations contributors
+site_url: https://example.github.io/agents-and-automations/
 copyright: 'Released under the MIT License. Trademarks belong to their respective owners.<br>This is a synthetic public demo site for educational and reference purposes only. Not for clinical decision-making or real patient care.<br><a href="https://www.washington.edu/online/terms/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline; margin-right: 15px;">University Website Terms</a><a href="https://www.washington.edu/online/privacy/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline;">University Online Privacy Policy</a>'
 
 theme:
@@ -81,9 +81,11 @@ extra:
 
 extra_css:
   - assets/stylesheets/task-builder.css
+  - assets/stylesheets/claude-workbench.css
 
 extra_javascript:
   - assets/javascripts/task-builder.js
+  - assets/javascripts/claude-workbench.js
 
 nav:
   - Home: index.md
@@ -187,6 +189,10 @@ nav:
       - First Grok task: quickstarts/first-grok-task.md
   - Recipes:
       - recipes/index.md
+  - Clinical Workflows:
+      - Word-to-PPT Blueprint: recipes/word-to-ppt.md
+      - Medical Infographics Guide: recipes/medical-infographics.md
+      - My AI Toolkit: my-toolkit/mcp-plugins.md
   - Agent Factory:
       - agent-factory/index.md
       - Operating model: agent-factory/factory-operating-model.md

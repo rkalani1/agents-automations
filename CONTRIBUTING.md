@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for considering a contribution to the AI Agent Builder Field Guide. This is a living guide; the agent space changes weekly, and good PRs are very welcome.
+Thanks for considering a contribution to the Agents and Automations. This is a living guide; the agent space changes weekly, and good PRs are very welcome.
 
 ## Ground rules
 
@@ -39,3 +39,4 @@ Material architecture or scope changes should land as an Architecture Decision R
 ## Reporting issues
 
 Use GitHub Issues. For security-sensitive issues, see [SECURITY.md](SECURITY.md).
+

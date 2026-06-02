@@ -2,7 +2,7 @@
 
 ## What This Kit Is
 
-This is the vendor-neutral baseline starter kit from the Agent Builder Field Guide. It contains everything you need to define, evaluate, and safely operate a simple summarization agent before you write a single line of code. The agent task modeled here is: summarize a folder of plain-text notes into a one-pager. That task is intentionally narrow so that every field in the spec feels concrete and reachable.
+This is the vendor-neutral baseline starter kit from the Agents and Automations. It contains everything you need to define, evaluate, and safely operate a simple summarization agent before you write a single line of code. The agent task modeled here is: summarize a folder of plain-text notes into a one-pager. That task is intentionally narrow so that every field in the spec feels concrete and reachable.
 
 This kit is not tied to any runtime, cloud provider, or orchestration framework. The files here translate directly into any platform — Claude Code, Codex CLI, OpenAI Agents SDK, LangChain, AutoGen, or a bare API call in a shell script.
 
@@ -43,3 +43,4 @@ This kit is not tied to any runtime, cloud provider, or orchestration framework.
 ## A Note on Scope
 
 This kit models a read-only, single-purpose agent. It reads files; it never writes them. If your agent needs write access, update `AGENT_SPEC.md` and `TOOL_ALLOWLIST.md` accordingly and re-run the full launch checklist before deploying.
+

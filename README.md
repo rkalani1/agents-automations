@@ -1,4 +1,4 @@
-# AI Agent Builder Field Guide
+# Agents and Automations
 
 A practical, vendor-neutral field guide to designing, configuring, testing, and operating AI agents across **Claude**, **Gemini**, **ChatGPT/OpenAI**, **Codex**, **GitHub Copilot**, and adjacent agent surfaces.
 
@@ -51,3 +51,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 ## License
 
 [MIT](LICENSE). All trademarks belong to their respective owners. This guide is independent and is not endorsed by Anthropic, OpenAI, Google, GitHub, or Microsoft.
+

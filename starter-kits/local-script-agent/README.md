@@ -4,7 +4,7 @@
 
 This starter kit configures a local Python script agent: a single-file Python script that calls an LLM API to summarize a folder of notes. It is the simplest possible agent deployment — no frameworks, no orchestration layer, just a Python script you can read end-to-end in five minutes.
 
-This kit is the reference implementation for the local-scripts platform described in `docs/platforms/local-scripts.md` of the Agent Builder Field Guide.
+This kit is the reference implementation for the local-scripts platform described in `docs/platforms/local-scripts.md` of the Agents and Automations.
 
 The script is inert by default. It exits immediately unless `OPERATOR_APPROVED_TO_RUN=1` is set, and it prints a dry-run description of what it would do before doing anything.
 
@@ -43,3 +43,4 @@ The script is inert by default. It exits immediately unless `OPERATOR_APPROVED_T
 This script can be scheduled with cron, but NEVER enable a cron job without first completing the full launch checklist. A commented-out example crontab line is included in `script.py` for reference only.
 
 Field Guide:  /agent-builder-field-guide/
+
