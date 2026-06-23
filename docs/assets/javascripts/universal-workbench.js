@@ -1080,16 +1080,32 @@ After I answer, propose a short, edit-ready instructions block. Keep it under 12
       return;
     }
 
-    toolkitGrid.innerHTML = filteredTools.map(tool => {
-      const badgesHtml = tool.tags.map(tag => `<span class="toolkit-badge">${tag}</span>`).join("");
-      return `
-        <div class="toolkit-card">
-          <h3>${tool.title}</h3>
-          <p>${tool.desc}</p>
-          <div class="toolkit-list">${badgesHtml}</div>
-        </div>
-      `;
-    }).join("");
+    toolkitGrid.innerHTML = "";
+    filteredTools.forEach(tool => {
+      const card = document.createElement("div");
+      card.className = "toolkit-card";
+
+      const title = document.createElement("h3");
+      title.textContent = tool.title;
+      card.appendChild(title);
+
+      const desc = document.createElement("p");
+      desc.textContent = tool.desc;
+      card.appendChild(desc);
+
+      const badgesContainer = document.createElement("div");
+      badgesContainer.className = "toolkit-list";
+
+      tool.tags.forEach(tag => {
+        const badge = document.createElement("span");
+        badge.className = "toolkit-badge";
+        badge.textContent = tag;
+        badgesContainer.appendChild(badge);
+      });
+      card.appendChild(badgesContainer);
+
+      toolkitGrid.appendChild(card);
+    });
   }
 
   // Model-agnostic surfaces listing and filtering
