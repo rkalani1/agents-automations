@@ -86,24 +86,8 @@ def safe_read(path: pathlib.Path) -> str:
     return resolved.read_text(encoding="utf-8", errors="ignore")
 
 
-# ---------------------------------------------------------------------------
-# MAIN
-# ---------------------------------------------------------------------------
-def main() -> None:
-    if not NOTES_DIR.is_dir():
-        print(f"ERROR: Notes directory not found: {NOTES_DIR}", file=sys.stderr)
-        print("Create ./sandbox/notes/ and add .txt files.", file=sys.stderr)
-        sys.exit(1)
-
-    note_files = sorted(NOTES_DIR.glob("*.txt")) + sorted(NOTES_DIR.glob("*.md"))
-    note_files = note_files[:MAX_FILES]
-
-    if not note_files:
-        print("ERROR: No .txt or .md files found in ./sandbox/notes/", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Found {len(note_files)} note file(s). Reading...")
-
+def read_notes(note_files: list[pathlib.Path]) -> tuple[str, list[str]]:
+    """Read the content of multiple note files and return combined text and warnings."""
     combined = []
     warnings = []
     for f in note_files:
@@ -117,12 +101,10 @@ def main() -> None:
             warnings.append(f"Skipped {f.name}: {e}")
             print(f"WARNING: Skipped {f.name}: {e}", file=sys.stderr)
 
-    if not combined:
-        print("ERROR: No files could be read.", file=sys.stderr)
-        sys.exit(1)
+    return "\n\n".join(combined), warnings
 
-    user_message = "\n\n".join(combined)
-
+def summarize_notes(user_message: str) -> str:
+    """Call the OpenAI API to summarize the combined notes."""
     # Model is read from OPENAI_MODEL so the script doesn't go stale when
     # vendors retire model IDs. See docs/model-freshness.md in the guide.
     model = os.getenv("OPENAI_MODEL")
@@ -143,7 +125,33 @@ def main() -> None:
         max_tokens=1024,
     )
 
-    summary = response.choices[0].message.content or ""
+    return response.choices[0].message.content or ""
+
+# ---------------------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------------------
+def main() -> None:
+    if not NOTES_DIR.is_dir():
+        print(f"ERROR: Notes directory not found: {NOTES_DIR}", file=sys.stderr)
+        print("Create ./sandbox/notes/ and add .txt files.", file=sys.stderr)
+        sys.exit(1)
+
+    note_files = sorted(NOTES_DIR.glob("*.txt")) + sorted(NOTES_DIR.glob("*.md"))
+    note_files = note_files[:MAX_FILES]
+
+    if not note_files:
+        print("ERROR: No .txt or .md files found in ./sandbox/notes/", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Found {len(note_files)} note file(s). Reading...")
+
+    user_message, warnings = read_notes(note_files)
+
+    if not user_message:
+        print("ERROR: No files could be read.", file=sys.stderr)
+        sys.exit(1)
+
+    summary = summarize_notes(user_message)
 
     print("\n--- SUMMARY ---\n")
     print(summary)
