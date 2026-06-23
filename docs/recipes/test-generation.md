@@ -102,7 +102,7 @@ Rules:
 7. Do not use mocks unless the function has an external dependency (network, database). If mocking is needed, use pytest-mock and add a comment explaining why.
 8. If a function's purpose is unclear from its signature and docstring, generate a skeleton:
    def test_<name>_TODO():
-       # TODO: clarify function purpose before writing assertions
+       # TODO: add assertions
        pass
 9. Add a module-level docstring to the test file explaining what is being tested.
 10. Do not run the tests. Print a summary of test functions generated.
