@@ -17,36 +17,38 @@ import * as path from "path";
 // ---------------------------------------------------------------------------
 // SAFETY GATE: exit immediately unless explicitly approved
 // ---------------------------------------------------------------------------
-const APPROVED = process.env.OPERATOR_APPROVED_TO_RUN === "1";
+export function runSafetyGate() {
+  const APPROVED = process.env.OPERATOR_APPROVED_TO_RUN === "1";
 
-if (!APPROVED) {
-  console.log("=".repeat(60));
-  console.log("DRY-RUN MODE — This script will NOT make any API calls.");
-  console.log("Set OPERATOR_APPROVED_TO_RUN=1 to enable live execution.");
-  console.log("=".repeat(60));
-  console.log();
-  console.log("What this script WOULD do if enabled:");
-  console.log("  1. Read OPENAI_API_KEY from process.env.");
-  console.log("  2. Register the readNotes() function as a tool.");
-  console.log("  3. Create an Agent with the summarization system prompt.");
-  console.log("  4. Run the agent against ./sandbox/notes/.");
-  console.log("  5. Print the resulting summary to stdout.");
-  console.log();
-  console.log("Sandbox directory that would be used: ./sandbox/");
-  console.log("No files would be created, modified, or deleted.");
-  console.log("No network calls would be made except to the OpenAI API.");
-  process.exit(0);
-}
+  if (!APPROVED) {
+    console.log("=".repeat(60));
+    console.log("DRY-RUN MODE — This script will NOT make any API calls.");
+    console.log("Set OPERATOR_APPROVED_TO_RUN=1 to enable live execution.");
+    console.log("=".repeat(60));
+    console.log();
+    console.log("What this script WOULD do if enabled:");
+    console.log("  1. Read OPENAI_API_KEY from process.env.");
+    console.log("  2. Register the readNotes() function as a tool.");
+    console.log("  3. Create an Agent with the summarization system prompt.");
+    console.log("  4. Run the agent against ./sandbox/notes/.");
+    console.log("  5. Print the resulting summary to stdout.");
+    console.log();
+    console.log("Sandbox directory that would be used: ./sandbox/");
+    console.log("No files would be created, modified, or deleted.");
+    console.log("No network calls would be made except to the OpenAI API.");
+    process.exit(0);
+  }
 
 // ---------------------------------------------------------------------------
-// API KEY CHECK
-// ---------------------------------------------------------------------------
-const apiKey = process.env.OPENAI_API_KEY;
-if (!apiKey) {
-  console.error("ERROR: OPENAI_API_KEY environment variable is not set.");
-  console.error("Set it to your OpenAI API key before running this script.");
-  console.error("Example: export OPENAI_API_KEY=sk-REPLACE_ME");
-  process.exit(1);
+  // API KEY CHECK
+  // ---------------------------------------------------------------------------
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    console.error("ERROR: OPENAI_API_KEY environment variable is not set.");
+    console.error("Set it to your OpenAI API key before running this script.");
+    console.error("Example: export OPENAI_API_KEY=sk-REPLACE_ME");
+    process.exit(1);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -58,9 +60,9 @@ if (!apiKey) {
 // ---------------------------------------------------------------------------
 // SANDBOX ENFORCEMENT
 // ---------------------------------------------------------------------------
-const SANDBOX_DIR = path.resolve("./sandbox");
+export const SANDBOX_DIR = path.resolve("./sandbox");
 
-function safePath(relativePath: string): string {
+export function safePath(relativePath: string): string {
   const resolved = path.resolve(SANDBOX_DIR, relativePath);
   if (!resolved.startsWith(SANDBOX_DIR + path.sep) && resolved !== SANDBOX_DIR) {
     throw new Error(
@@ -150,7 +152,10 @@ async function main(): Promise<void> {
   console.log("\nUser message:", userMessage);
 }
 
-main().catch((err) => {
-  console.error("Agent error:", err);
-  process.exit(1);
-});
+if (require.main === module) {
+  runSafetyGate();
+  main().catch((err) => {
+    console.error("Agent error:", err);
+    process.exit(1);
+  });
+}
