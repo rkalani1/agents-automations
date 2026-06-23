@@ -542,15 +542,12 @@ Give me one polished version and one shorter version.`
     if (savedRoughPrompt) roughPrompt.value = savedRoughPrompt;
   }
 
-  function hasChoice(buttons, attribute, value) {
-    return buttons.some((button) => button.getAttribute(attribute) === value);
-  }
-
   function readChoice(key, buttons, attribute, fallback) {
+    const isValid = (val) => val && Array.from(buttons).some((b) => b.getAttribute(attribute) === val);
     const fromUrl = urlParams.get(key);
-    if (fromUrl && hasChoice(buttons, attribute, fromUrl)) return fromUrl;
+    if (isValid(fromUrl)) return fromUrl;
     const fromStorage = storage.get(key);
-    if (fromStorage && hasChoice(buttons, attribute, fromStorage)) return fromStorage;
+    if (isValid(fromStorage)) return fromStorage;
     return fallback;
   }
 
