@@ -1,6 +1,17 @@
 document$.subscribe(function () {
   "use strict";
 
+  function escapeHtml(unsafe) {
+    if (typeof unsafe !== 'string') return unsafe;
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  }
+
+
   const surfaceHints = {
     chat: "Claude Chat",
     project: "a Claude Project",
@@ -748,8 +759,14 @@ After the answer:
     selectedMission = missionData[mission] ? mission : "email";
     setActiveChoice(missionButtons, "data-mission", mission);
     if (missionTitle) missionTitle.textContent = detail.title;
-    if (missionSurface) missionSurface.innerHTML = `<strong>Best Claude surface:</strong> ${detail.surface}`;
-    if (missionNext) missionNext.innerHTML = `<strong>Next move:</strong> ${detail.next}`;
+    if (missionSurface) {
+      missionSurface.innerHTML = "<strong>Best Claude surface:</strong> ";
+      missionSurface.appendChild(document.createTextNode(detail.surface));
+    }
+    if (missionNext) {
+      missionNext.innerHTML = "<strong>Next move:</strong> ";
+      missionNext.appendChild(document.createTextNode(detail.next));
+    }
     if (missionPrompt) missionPrompt.value = detail.prompt;
     if (options.persist !== false) persistState();
   }
@@ -759,7 +776,10 @@ After the answer:
     selectedFix = fixData[fix] ? fix : "vague";
     setActiveChoice(fixButtons, "data-fix", fix);
     if (fixTitle) fixTitle.textContent = detail.title;
-    if (fixNext) fixNext.innerHTML = `<strong>Use when:</strong> ${detail.next}`;
+    if (fixNext) {
+      fixNext.innerHTML = "<strong>Use when:</strong> ";
+      fixNext.appendChild(document.createTextNode(detail.next));
+    }
     if (fixPrompt) fixPrompt.value = detail.prompt;
     if (options.persist !== false) persistState();
   }
@@ -1243,12 +1263,12 @@ After the answer:
       card.className = "toolkit-card";
       
       const copyButtonHtml = item.install
-        ? `<button type="button" class="button small copy-inline" data-copy-text="${item.install.replace(/"/g, '&quot;')}">Copy Install Command</button>`
+        ? `<button type="button" class="button small copy-inline" data-copy-text="${escapeHtml(item.install)}">Copy Install Command</button>`
         : "";
 
       const useCasesHtml = item.useCases && item.useCases.length
         ? `<div class="toolkit-list" style="margin-top: 0.5rem;">
-             ${item.useCases.map(uc => `<span class="toolkit-badge" style="font-size: 0.7rem; opacity: 0.85;">${uc}</span>`).join("")}
+             ${item.useCases.map(uc => `<span class="toolkit-badge" style="font-size: 0.7rem; opacity: 0.85;">${escapeHtml(uc)}</span>`).join("")}
            </div>`
         : "";
 
@@ -1256,7 +1276,7 @@ After the answer:
         ? `<div class="skills-section">
              <h4>Skills / Tools</h4>
              <div class="skills-list">
-               ${item.skills.map(s => `<code class="skill-name">${s}</code>`).join("")}
+               ${item.skills.map(s => `<code class="skill-name">${escapeHtml(s)}</code>`).join("")}
              </div>
            </div>`
         : "";
@@ -1265,7 +1285,7 @@ After the answer:
         ? `<div class="automations-section" style="margin-top: 0.5rem;">
              <h4>Recipes & Automations</h4>
              <div class="automations-list">
-               ${item.automations.map(a => `<div class="automation-item">${a}</div>`).join("")}
+               ${item.automations.map(a => `<div class="automation-item">${escapeHtml(a)}</div>`).join("")}
              </div>
            </div>`
         : "";
@@ -1279,9 +1299,9 @@ After the answer:
         : "";
 
       card.innerHTML = `
-        <span class="surface-badge">${item.surface}</span>
-        <h3>${item.name}</h3>
-        <p>${item.description}</p>
+        <span class="surface-badge">${escapeHtml(item.surface)}</span>
+        <h3>${escapeHtml(item.name)}</h3>
+        <p>${escapeHtml(item.description)}</p>
         ${useCasesHtml}
         ${detailsHtml}
         <div class="card-links" style="display: flex; gap: 0.5rem; align-items: center; margin-top: auto; padding-top: 0.5rem;">
