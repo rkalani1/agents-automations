@@ -547,11 +547,8 @@ Give me one polished version and one shorter version.`
   }
 
   function readChoice(key, buttons, attribute, fallback) {
-    const fromUrl = urlParams.get(key);
-    if (fromUrl && hasChoice(buttons, attribute, fromUrl)) return fromUrl;
-    const fromStorage = storage.get(key);
-    if (fromStorage && hasChoice(buttons, attribute, fromStorage)) return fromStorage;
-    return fallback;
+    const choices = [urlParams.get(key), storage.get(key)];
+    return choices.find(choice => choice && hasChoice(buttons, attribute, choice)) || fallback;
   }
 
   function updateStateUrl() {
