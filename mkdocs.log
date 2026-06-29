@@ -1,0 +1,70 @@
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+INFO    -  Building documentation...
+INFO    -  Cleaning site directory
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - claude-mastery/index.md
+  - recipes/agent-portfolio-ranking.md
+  - recipes/antigravity-project.md
+  - recipes/browser-form-fill-dryrun.md
+  - recipes/browser-research.md
+  - recipes/calendar-meeting-prep.md
+  - recipes/claude-code-repo-editing.md
+  - recipes/clinical-literature-summarizer.md
+  - recipes/codex-repo-editing.md
+  - recipes/cost-monitoring.md
+  - recipes/cross-platform-prompt-porter.md
+  - recipes/customer-support-draft.md
+  - recipes/documentation-refresh.md
+  - recipes/email-triage.md
+  - recipes/eval-case-generator.md
+  - recipes/gemini-function-calling.md
+  - recipes/github-copilot-cloud-task.md
+  - recipes/github-issue-grooming.md
+  - recipes/grant-proposal-draft.md
+  - recipes/grok-structured-output.md
+  - recipes/grok-tool-calling.md
+  - recipes/incident-response-summarizer.md
+  - recipes/literature-triage.md
+  - recipes/local-first-offline-summarizer.md
+  - recipes/local-folder-monitor.md
+  - recipes/mcp-database-readonly.md
+  - recipes/mcp-filesystem-assistant.md
+  - recipes/multi-agent-coding-sprint.md
+  - recipes/obsidian-capture.md
+  - recipes/openai-agents-sdk-tool-calling.md
+  - recipes/pdf-extraction.md
+  - recipes/personal-daily-brief.md
+  - recipes/pr-review.md
+  - recipes/prompt-pack-generator.md
+  - recipes/red-team-generator.md
+  - recipes/release-notes.md
+  - recipes/repo-maintenance.md
+  - recipes/research-data-dictionary.md
+  - recipes/security-dependency-review.md
+  - recipes/slack-teams-digest.md
+  - recipes/source-drift-checker.md
+  - recipes/spreadsheet-cleaning.md
+  - recipes/team-knowledge-qa.md
+  - recipes/test-generation.md
+INFO    -  Documentation built in 9.32 seconds
+INFO    -  [21:38:36] Watching paths for changes: 'docs', 'mkdocs.yml'
+INFO    -  [21:38:36] Serving on http://127.0.0.1:8000/agents-automations/
+INFO    -  [21:39:44] Browser connected: http://127.0.0.1:8000/agents-automations/
+INFO    -  [21:39:44] Browser connected: http://127.0.0.1:8000/agents-automations/claude-mastery/
+INFO    -  [21:39:45] Browser connected: http://127.0.0.1:8000/agents-automations/surface-router/
+INFO    -  [21:39:46] Browser connected: http://127.0.0.1:8000/agents-automations/task-builder/
