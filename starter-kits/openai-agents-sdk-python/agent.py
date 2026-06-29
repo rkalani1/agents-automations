@@ -61,7 +61,7 @@ SANDBOX_DIR = pathlib.Path("./sandbox").resolve()
 def _safe_path(path: str) -> pathlib.Path:
     """Resolve path and reject anything outside SANDBOX_DIR."""
     resolved = (SANDBOX_DIR / path).resolve()
-    if not str(resolved).startswith(str(SANDBOX_DIR)):
+    if not resolved.is_relative_to(SANDBOX_DIR):
         raise PermissionError(
             f"Path '{path}' resolves outside sandbox directory '{SANDBOX_DIR}'. "
             "Access denied."
