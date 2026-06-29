@@ -89,7 +89,7 @@ Task 1 — Dependency updates:
 Task 2 — Lint fixes:
 1. Run: ruff check src/ --output-format=json (or eslint src/ --format=json) and capture warnings.
 2. For each auto-fixable warning, apply the fix.
-3. For warnings that require judgment (e.g., refactoring), add a comment: # TODO: lint warning <rule> — review needed
+3. For warnings that require judgment (e.g., refactoring), add a comment: `# TODO: lint warning <rule> — review needed`
 4. Commit changes with message: "chore: fix ruff lint warnings YYYY-MM-DD"
 
 Task 3 — PR description:
