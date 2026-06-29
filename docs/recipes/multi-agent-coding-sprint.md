@@ -97,7 +97,7 @@ SANDBOX = ""  # set at runtime
 @function_tool
 def read_file(path: str) -> str:
     full = Path(SANDBOX) / path
-    if not str(full.resolve()).startswith(str(Path(SANDBOX).resolve())):
+    if not full.resolve().is_relative_to(Path(SANDBOX).resolve()):
         return "ERROR: path outside sandbox"
     try:
         return full.read_text(encoding="utf-8")
@@ -107,7 +107,7 @@ def read_file(path: str) -> str:
 @function_tool
 def write_file(path: str, content: str) -> str:
     full = Path(SANDBOX) / path
-    if not str(full.resolve()).startswith(str(Path(SANDBOX).resolve())):
+    if not full.resolve().is_relative_to(Path(SANDBOX).resolve()):
         return "ERROR: path outside sandbox"
     full.parent.mkdir(parents=True, exist_ok=True)
     full.write_text(content, encoding="utf-8")
