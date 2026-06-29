@@ -1222,32 +1222,31 @@
     // ---- copy / save / export ---------------------------------------------
 
     $$("[data-tb-copy]", root).forEach(btn => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", async () => {
         const id = "tb-out-" + btn.dataset.tbCopy;
         const node = document.getElementById(id);
         if (!node) return;
         const text = node.textContent || "";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(
-            () => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); },
-            () => fallbackCopy(text, btn)
-          );
-        } else fallbackCopy(text, btn);
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = "Copied";
+          } else {
+            throw new Error("Clipboard API not available");
+          }
+        } catch (e) {
+          // If node is an input/textarea, select it as a fallback
+          if (node && typeof node.select === "function") {
+            node.focus();
+            node.select();
+            btn.textContent = "Selected";
+          } else {
+            btn.textContent = "Copy failed";
+          }
+        }
+        setTimeout(() => (btn.textContent = "Copy"), 1500);
       });
     });
-
-    function fallbackCopy(text, btn) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.setAttribute("readonly", "true");
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); }
-      catch (e) { btn.textContent = "Copy failed"; setTimeout(() => (btn.textContent = "Copy"), 1500); }
-      document.body.removeChild(ta);
-    }
 
     $$("[data-tb-action]", root).forEach(btn => {
       btn.addEventListener("click", () => {

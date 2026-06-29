@@ -850,19 +850,20 @@ Provide:
   }
 
   async function copyText(text, target) {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      return true;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (e) {
+      // Fall through to manual selection
     }
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.style.position = "absolute";
-    textarea.style.left = "-9999px";
-    document.body.appendChild(textarea);
-    textarea.select();
-    const copied = document.execCommand("copy");
-    document.body.removeChild(textarea);
-    return copied;
+
+    if (target && typeof target.select === "function") {
+      target.focus();
+      target.select();
+    }
+    return false;
   }
 
   // Model-specific UI updating function
