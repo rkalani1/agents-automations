@@ -85,7 +85,7 @@ The sandbox repo must be a separate directory from your production codebase. Bef
 
 ```python
 # coding_sprint.py
-import argparse, os, subprocess
+import argparse, os, shlex, subprocess
 from pathlib import Path
 from dotenv import load_dotenv
 from agents import Agent, Runner, function_tool, handoff
@@ -115,8 +115,13 @@ def write_file(path: str, content: str) -> str:
 
 @function_tool
 def run_tests(test_command: str) -> dict:
+    try:
+        command_args = shlex.split(test_command)
+    except ValueError as e:
+        return {"stdout": "", "stderr": f"Error parsing command: {e}", "exit_code": 1}
+
     result = subprocess.run(
-        test_command, shell=True, cwd=SANDBOX,
+        command_args, shell=False, cwd=SANDBOX,
         capture_output=True, text=True, timeout=60
     )
     return {"stdout": result.stdout[-2000:], "stderr": result.stderr[-1000:],
