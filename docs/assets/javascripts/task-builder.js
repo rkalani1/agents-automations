@@ -1268,9 +1268,8 @@
           form.reset();
           // Reset radios to defaults explicitly.
           const defaults = { mode: "beginner", primary_app: "chatgpt", comfort: "beginner" };
-          Object.keys(defaults).forEach(name => {
-            $$("input[name='" + name + "']", root).forEach(i => { i.checked = (i.value === defaults[name]); });
-          });
+          const selectors = Object.keys(defaults).map(name => "input[name='" + name + "']").join(',');
+          $$(selectors, root).forEach(i => { i.checked = (i.value === defaults[i.name]); });
           render();
         } else if (action === "export") {
           const blob = new Blob([buildJSON(readForm(), recommend(readForm()))], { type: "application/json" });
