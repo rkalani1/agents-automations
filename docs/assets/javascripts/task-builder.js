@@ -1230,24 +1230,14 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(
             () => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); },
-            () => fallbackCopy(text, btn)
+            () => { btn.textContent = "Copy failed"; setTimeout(() => (btn.textContent = "Copy"), 1500); }
           );
-        } else fallbackCopy(text, btn);
+        } else {
+          btn.textContent = "Copy failed";
+          setTimeout(() => (btn.textContent = "Copy"), 1500);
+        }
       });
     });
-
-    function fallbackCopy(text, btn) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.setAttribute("readonly", "true");
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy"), 1500); }
-      catch (e) { btn.textContent = "Copy failed"; setTimeout(() => (btn.textContent = "Copy"), 1500); }
-      document.body.removeChild(ta);
-    }
 
     $$("[data-tb-action]", root).forEach(btn => {
       btn.addEventListener("click", () => {
