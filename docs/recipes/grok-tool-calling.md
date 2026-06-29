@@ -217,7 +217,7 @@ def read_notes(path: str) -> str:
     """Read a note file from NOTES_DIR. Reject paths that escape the folder."""
     safe_path = (NOTES_DIR / Path(path).name).resolve()
     notes_resolved = NOTES_DIR.resolve()
-    if not str(safe_path).startswith(str(notes_resolved)):
+    if not safe_path.is_relative_to(notes_resolved):
         return "Error: path is outside the notes folder."
     if not safe_path.exists():
         available = ", ".join(p.name for p in NOTES_DIR.glob("*.txt"))
