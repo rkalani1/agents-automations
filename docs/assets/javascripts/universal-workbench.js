@@ -971,10 +971,11 @@ After I answer, propose a short, edit-ready instructions block. Keep it under 12
         return `<button type="button" class="${cls}" data-surface="${s.key}">${s.name}</button>`;
       }).join("");
       // Bind event listeners to new buttons
-      labSurfaceSelector.querySelectorAll("[data-surface]").forEach(btn => {
+      const surfaceButtons = Array.from(labSurfaceSelector.querySelectorAll("[data-surface]"));
+      surfaceButtons.forEach(btn => {
         btn.addEventListener("click", () => {
           activeSurface = btn.getAttribute("data-surface");
-          setActiveChoice(Array.from(labSurfaceSelector.querySelectorAll("[data-surface]")), "data-surface", activeSurface);
+          setActiveChoice(surfaceButtons, "data-surface", activeSurface);
           renderOptimizedPrompt();
         });
       });
