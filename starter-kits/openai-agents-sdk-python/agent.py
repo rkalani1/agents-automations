@@ -112,7 +112,8 @@ summarizer_agent = Agent(
 # ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
-def main() -> None:
+def get_note_files() -> list[pathlib.Path]:
+    """Discover and validate note files in the sandbox directory."""
     notes_dir = SANDBOX_DIR / "notes"
     if not notes_dir.is_dir():
         print(f"ERROR: Sandbox notes directory not found: {notes_dir}", file=sys.stderr)
@@ -123,6 +124,12 @@ def main() -> None:
     if not note_files:
         print("ERROR: No .txt or .md files found in ./sandbox/notes/", file=sys.stderr)
         sys.exit(1)
+
+    return note_files
+
+
+def main() -> None:
+    note_files = get_note_files()
 
     file_list = ", ".join(f.name for f in note_files[:50])
     user_message = (
