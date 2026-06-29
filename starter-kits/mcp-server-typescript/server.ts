@@ -64,10 +64,10 @@ if (!APPROVED) {
 // ---------------------------------------------------------------------------
 // INPUT VALIDATION
 // ---------------------------------------------------------------------------
-const FORBIDDEN_CHARS = /[\n\r\x00;<>&|`$(){}\[\]]/;
-const MAX_NAME_LENGTH = 100;
+export const FORBIDDEN_CHARS = /[\n\r\x00;<>&|`$(){}\[\]]/;
+export const MAX_NAME_LENGTH = 100;
 
-function validateName(name: unknown): { valid: true; name: string } | { valid: false; error: string } {
+export function validateName(name: unknown): { valid: true; name: string } | { valid: false; error: string } {
   if (typeof name !== "string" || name.length === 0) {
     return { valid: false, error: "Error: name must be a non-empty string." };
   }
