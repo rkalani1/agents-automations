@@ -1075,21 +1075,41 @@ After I answer, propose a short, edit-ready instructions block. Keep it under 12
       return true;
     });
 
+    toolkitGrid.innerHTML = "";
+
     if (filteredTools.length === 0) {
-      toolkitGrid.innerHTML = `<div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--muted);">No toolkit components configured in this category.</div>`;
+      const emptyDiv = document.createElement("div");
+      emptyDiv.style.cssText = "grid-column: 1/-1; padding: 2rem; text-align: center; color: var(--muted);";
+      emptyDiv.textContent = "No toolkit components configured in this category.";
+      toolkitGrid.appendChild(emptyDiv);
       return;
     }
 
-    toolkitGrid.innerHTML = filteredTools.map(tool => {
-      const badgesHtml = tool.tags.map(tag => `<span class="toolkit-badge">${tag}</span>`).join("");
-      return `
-        <div class="toolkit-card">
-          <h3>${tool.title}</h3>
-          <p>${tool.desc}</p>
-          <div class="toolkit-list">${badgesHtml}</div>
-        </div>
-      `;
-    }).join("");
+    filteredTools.forEach(tool => {
+      const card = document.createElement("div");
+      card.className = "toolkit-card";
+
+      const title = document.createElement("h3");
+      title.textContent = tool.title;
+      card.appendChild(title);
+
+      const desc = document.createElement("p");
+      desc.textContent = tool.desc;
+      card.appendChild(desc);
+
+      const list = document.createElement("div");
+      list.className = "toolkit-list";
+
+      tool.tags.forEach(tag => {
+        const badge = document.createElement("span");
+        badge.className = "toolkit-badge";
+        badge.textContent = tag;
+        list.appendChild(badge);
+      });
+
+      card.appendChild(list);
+      toolkitGrid.appendChild(card);
+    });
   }
 
   // Model-agnostic surfaces listing and filtering
