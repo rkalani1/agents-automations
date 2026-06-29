@@ -86,6 +86,36 @@ def safe_read(path: pathlib.Path) -> str:
     return resolved.read_text(encoding="utf-8", errors="ignore")
 
 
+def read_note_files(note_files: list[pathlib.Path]) -> tuple[str, list[str]]:
+    """Read contents of note files and return combined text and warnings."""
+    combined = []
+    warnings = []
+    for f in note_files:
+        try:
+            content = safe_read(f)
+            combined.append(f"--- {f.name} ---\n{content}")
+        except PermissionError as e:
+            warnings.append(str(e))
+            print(f"WARNING: {e}", file=sys.stderr)
+        except Exception as e:
+            warnings.append(f"Skipped {f.name}: {e}")
+            print(f"WARNING: Skipped {f.name}: {e}", file=sys.stderr)
+    return "\n\n".join(combined), warnings
+
+def generate_summary(user_message: str, model: str, api_key: str) -> str:
+    """Generate a summary of the notes using the OpenAI API."""
+    print(f"Calling OpenAI API for summarization with model={model}...")
+    client = OpenAI(api_key=api_key)
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_message},
+        ],
+        max_tokens=1024,
+    )
+    return response.choices[0].message.content or ""
+
 # ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
@@ -104,24 +134,11 @@ def main() -> None:
 
     print(f"Found {len(note_files)} note file(s). Reading...")
 
-    combined = []
-    warnings = []
-    for f in note_files:
-        try:
-            content = safe_read(f)
-            combined.append(f"--- {f.name} ---\n{content}")
-        except PermissionError as e:
-            warnings.append(str(e))
-            print(f"WARNING: {e}", file=sys.stderr)
-        except Exception as e:
-            warnings.append(f"Skipped {f.name}: {e}")
-            print(f"WARNING: Skipped {f.name}: {e}", file=sys.stderr)
+    user_message, warnings = read_note_files(note_files)
 
-    if not combined:
+    if not user_message:
         print("ERROR: No files could be read.", file=sys.stderr)
         sys.exit(1)
-
-    user_message = "\n\n".join(combined)
 
     # Model is read from OPENAI_MODEL so the script doesn't go stale when
     # vendors retire model IDs. See docs/model-freshness.md in the guide.
@@ -132,18 +149,7 @@ def main() -> None:
         print("  export OPENAI_MODEL=<model-id>", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Calling OpenAI API for summarization with model={model}...")
-    client = OpenAI(api_key=api_key)
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_message},
-        ],
-        max_tokens=1024,
-    )
-
-    summary = response.choices[0].message.content or ""
+    summary = generate_summary(user_message, model, api_key)
 
     print("\n--- SUMMARY ---\n")
     print(summary)
