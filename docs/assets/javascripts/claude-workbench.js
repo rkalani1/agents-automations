@@ -608,29 +608,22 @@ Give me one polished version and one shorter version.`
     });
   }
 
-  function copyTextFallback(text, target) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "true");
-    textarea.style.position = "absolute";
-    textarea.style.left = "-9999px";
-    document.body.appendChild(textarea);
-    textarea.select();
-    const copied = document.execCommand("copy");
-    document.body.removeChild(textarea);
-    if (!copied && target && typeof target.select === "function") {
+  async function copyText(text, target) {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        console.error("Failed to copy text: ", err);
+      }
+    }
+
+    // Fallback behavior when clipboard API is unavailable
+    if (target && typeof target.select === "function") {
       target.focus();
       target.select();
     }
-    return copied;
-  }
-
-  async function copyText(text, target) {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      return true;
-    }
-    return copyTextFallback(text, target);
+    return false;
   }
 
   async function copyTemplate(targetId, button, successMessage) {
