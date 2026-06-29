@@ -106,16 +106,28 @@ def main() -> None:
 
     combined = []
     warnings = []
-    for f in note_files:
+
+    import concurrent.futures
+
+    def process_file(f):
         try:
             content = safe_read(f)
-            combined.append(f"--- {f.name} ---\n{content}")
+            return (f, f"--- {f.name} ---\n{content}", None)
         except PermissionError as e:
-            warnings.append(str(e))
-            print(f"WARNING: {e}", file=sys.stderr)
+            return (f, None, f"WARNING: {e}")
         except Exception as e:
-            warnings.append(f"Skipped {f.name}: {e}")
-            print(f"WARNING: Skipped {f.name}: {e}", file=sys.stderr)
+            return (f, None, f"WARNING: Skipped {f.name}: {e}")
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = executor.map(process_file, note_files)
+
+        for result in results:
+            f, content, error = result
+            if content is not None:
+                combined.append(content)
+            if error is not None:
+                warnings.append(error.replace("WARNING: ", ""))
+                print(error, file=sys.stderr)
 
     if not combined:
         print("ERROR: No files could be read.", file=sys.stderr)

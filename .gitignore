@@ -12,3 +12,4 @@ __pycache__/
 node_modules/
 .idea/
 .vscode/
+starter-kits/local-script-agent/sandbox/notes/
