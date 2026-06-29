@@ -79,7 +79,7 @@ and Action Items.
 def safe_read(path: pathlib.Path) -> str:
     """Read a file only if it is inside SANDBOX_DIR."""
     resolved = path.resolve()
-    if not str(resolved).startswith(str(SANDBOX_DIR)):
+    if not resolved.is_relative_to(SANDBOX_DIR):
         raise PermissionError(
             f"Attempted to read outside sandbox: {resolved}"
         )
