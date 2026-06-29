@@ -119,12 +119,7 @@ const SYSTEM_PROMPT = `You are a note summarization assistant. Read the plain-te
 via the read_notes tool and produce a structured summary (300-500 words) of key themes, decisions, \
 and action items. Do not add information not present in the source files. Output format: markdown.`;
 
-// ---------------------------------------------------------------------------
-// MAIN (illustrative — wire to actual SDK Runner when enabling)
-// ---------------------------------------------------------------------------
-async function main(): Promise<void> {
-  const notesDir = path.join(SANDBOX_DIR, "notes");
-
+function getValidNoteFiles(notesDir: string): string[] {
   if (!fs.existsSync(notesDir)) {
     console.error(`ERROR: Sandbox notes directory not found: ${notesDir}`);
     console.error("Create ./sandbox/notes/ and add .txt files before running.");
@@ -140,6 +135,16 @@ async function main(): Promise<void> {
     console.error("ERROR: No .txt or .md files found in ./sandbox/notes/");
     process.exit(1);
   }
+
+  return noteFiles;
+}
+
+// ---------------------------------------------------------------------------
+// MAIN (illustrative — wire to actual SDK Runner when enabling)
+// ---------------------------------------------------------------------------
+async function main(): Promise<void> {
+  const notesDir = path.join(SANDBOX_DIR, "notes");
+  const noteFiles = getValidNoteFiles(notesDir);
 
   const fileList = noteFiles.join(", ");
   const userMessage = `Please summarize the following note files from sandbox/notes/: ${fileList}`;
