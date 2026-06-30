@@ -1456,9 +1456,17 @@ Rules:
     if (missionTitle) missionTitle.textContent = activeM.title;
     if (missionSurface) {
       const surface = (surfaceMappings[activeModel] && surfaceMappings[activeModel][activeMission]) || "Chat";
-      missionSurface.innerHTML = `<strong>Best ${data.name} surface:</strong> ${surface}`;
+      missionSurface.textContent = "";
+      const strong = document.createElement("strong");
+      strong.textContent = `Best ${data.name} surface:`;
+      missionSurface.append(strong, " ", surface);
     }
-    if (missionNext) missionNext.innerHTML = `<strong>Next move:</strong> ${activeM.next}`;
+    if (missionNext) {
+      missionNext.textContent = "";
+      const strong = document.createElement("strong");
+      strong.textContent = "Next move:";
+      missionNext.append(strong, " ", activeM.next);
+    }
     if (missionPrompt) {
       let promptText = activeM.text;
       // Tailor XML tags specifically for Claude
@@ -1478,7 +1486,12 @@ Rules:
     const fix = data.fixData[fixKey] || data.fixData.vague;
 
     if (fixTitle) fixTitle.textContent = fix.title;
-    if (fixNext) fixNext.innerHTML = `<strong>Use when:</strong> ${fix.next}`;
+    if (fixNext) {
+      fixNext.textContent = "";
+      const strong = document.createElement("strong");
+      strong.textContent = "Use when:";
+      fixNext.append(strong, " ", fix.next);
+    }
     if (fixPrompt) fixPrompt.value = fix.prompt;
   }
 

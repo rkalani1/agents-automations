@@ -17,6 +17,7 @@ docs/platforms/local-scripts.md
 import os
 import sys
 import pathlib
+from concurrent.futures import ThreadPoolExecutor
 
 # ---------------------------------------------------------------------------
 # SAFETY GATE
@@ -88,18 +89,26 @@ def safe_read(path: pathlib.Path) -> str:
 
 def read_note_files(note_files: list[pathlib.Path]) -> tuple[str, list[str]]:
     """Read contents of note files and return combined text and warnings."""
-    combined = []
+    combined: list[str] = []
     warnings = []
-    for f in note_files:
+
+    def read_one(f: pathlib.Path) -> tuple[str | None, str | None]:
         try:
             content = safe_read(f)
-            combined.append(f"--- {f.name} ---\n{content}")
+            return f"--- {f.name} ---\n{content}", None
         except PermissionError as e:
-            warnings.append(str(e))
-            print(f"WARNING: {e}", file=sys.stderr)
+            return None, str(e)
         except Exception as e:
-            warnings.append(f"Skipped {f.name}: {e}")
-            print(f"WARNING: Skipped {f.name}: {e}", file=sys.stderr)
+            return None, f"Skipped {f.name}: {e}"
+
+    with ThreadPoolExecutor() as executor:
+        for content, warning in executor.map(read_one, note_files):
+            if content is not None:
+                combined.append(content)
+            if warning is not None:
+                warnings.append(warning)
+                print(f"WARNING: {warning}", file=sys.stderr)
+
     return "\n\n".join(combined), warnings
 
 def generate_summary(user_message: str, model: str, api_key: str) -> str:

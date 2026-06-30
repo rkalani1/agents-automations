@@ -115,7 +115,11 @@ def write_file(path: str, content: str) -> str:
 
 @function_tool
 def run_tests(test_command: str) -> dict:
-    args = shlex.split(test_command)
+    try:
+        args = shlex.split(test_command)
+    except ValueError as e:
+        return {"stdout": "", "stderr": f"Error parsing command: {e}", "exit_code": 1}
+
     if not args or args[0] not in ["pytest", "npm"]:
         return {"stdout": "", "stderr": "Command not allowed. Only pytest or npm are permitted.", "exit_code": 1}
 
