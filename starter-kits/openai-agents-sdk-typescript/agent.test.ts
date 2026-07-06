@@ -45,6 +45,27 @@ describe('safePath', () => {
     const traversalPath = 'notes/../../outside.txt';
     expect(() => safePath(traversalPath)).toThrow();
   });
+
+  it('should prevent symlink traversal attacks', () => {
+    const fs = require('fs');
+    // Create a sandbox dir and a file outside it for testing
+    fs.mkdirSync('./sandbox', { recursive: true });
+    fs.mkdirSync('./outside', { recursive: true });
+    fs.writeFileSync('./outside/secret.txt', 'secret');
+
+    // Create a symlink inside sandbox pointing outside
+    try {
+      fs.symlinkSync('../outside', './sandbox/link');
+    } catch (e: any) {
+      if (e.code !== 'EEXIST') throw e;
+    }
+
+    const symlinkPath = 'link/secret.txt';
+    expect(() => safePath(symlinkPath)).toThrow();
+
+    const newSymlinkPath = 'link/new_secret.txt';
+    expect(() => safePath(newSymlinkPath)).toThrow();
+  });
 });
 
 describe('getValidNoteFiles', () => {

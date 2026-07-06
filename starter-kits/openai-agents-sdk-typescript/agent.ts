@@ -64,12 +64,39 @@ export const SANDBOX_DIR = path.resolve("./sandbox");
 
 export function safePath(relativePath: string): string {
   const resolved = path.resolve(SANDBOX_DIR, relativePath);
-  if (!resolved.startsWith(SANDBOX_DIR + path.sep) && resolved !== SANDBOX_DIR) {
+
+  let realResolved: string;
+  try {
+    realResolved = fs.realpathSync(resolved);
+  } catch (err: any) {
+    // If the file doesn't exist, resolve as much of the path as possible
+    if (err.code === 'ENOENT') {
+      let currentPath = resolved;
+      while (!fs.existsSync(currentPath)) {
+        const parent = path.dirname(currentPath);
+        if (parent === currentPath) {
+          break;
+        }
+        currentPath = parent;
+      }
+      const realCurrentPath = fs.existsSync(currentPath) ? fs.realpathSync(currentPath) : currentPath;
+      const relativeFromCurrent = path.relative(currentPath, resolved);
+      realResolved = relativeFromCurrent === ''
+        ? realCurrentPath
+        : path.resolve(realCurrentPath, relativeFromCurrent);
+    } else {
+      throw err;
+    }
+  }
+
+  const realSandbox = fs.existsSync(SANDBOX_DIR) ? fs.realpathSync(SANDBOX_DIR) : SANDBOX_DIR;
+
+  if (!realResolved.startsWith(realSandbox + path.sep) && realResolved !== realSandbox) {
     throw new Error(
       `Path '${relativePath}' resolves outside sandbox directory '${SANDBOX_DIR}'. Access denied.`
     );
   }
-  return resolved;
+  return realResolved;
 }
 
 // ---------------------------------------------------------------------------
