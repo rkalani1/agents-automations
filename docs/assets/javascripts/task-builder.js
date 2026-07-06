@@ -1176,22 +1176,25 @@
 
     // ---- tabs --------------------------------------------------------------
 
+    const cachedTabs = $$(".tb-tab", root);
+    const cachedPanels = $$(".tb-panel", root);
+
     function activateTab(name) {
-      $$(".tb-tab", root).forEach(t => {
+      cachedTabs.forEach(t => {
         const active = t.dataset.tbTab === name;
         t.setAttribute("aria-selected", active ? "true" : "false");
         t.tabIndex = active ? 0 : -1;
       });
-      $$(".tb-panel", root).forEach(p => { p.hidden = (p.dataset.tbPanel !== name); });
+      cachedPanels.forEach(p => { p.hidden = (p.dataset.tbPanel !== name); });
     }
 
-    $$(".tb-tab", root).forEach(tab => {
+    cachedTabs.forEach(tab => {
       const name = tab.dataset.tbTab;
       tab.id = tab.id || "tb-tab-" + name;
       tab.setAttribute("aria-controls", "tb-panel-" + name);
       tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
     });
-    $$(".tb-panel", root).forEach(panel => {
+    cachedPanels.forEach(panel => {
       const name = panel.dataset.tbPanel;
       panel.id = panel.id || "tb-panel-" + name;
       panel.setAttribute("role", "tabpanel");
@@ -1199,10 +1202,10 @@
       panel.tabIndex = 0;
     });
 
-    $$(".tb-tab", root).forEach(tab => {
+    cachedTabs.forEach(tab => {
       tab.addEventListener("click", () => activateTab(tab.dataset.tbTab));
       tab.addEventListener("keydown", (event) => {
-        const visibleTabs = $$(".tb-tab", root).filter(t => t.style.display !== "none");
+        const visibleTabs = cachedTabs.filter(t => t.style.display !== "none");
         const index = visibleTabs.indexOf(tab);
         if (index === -1) return;
         const last = visibleTabs.length - 1;
