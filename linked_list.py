@@ -3,6 +3,13 @@ class Node:
         self.val = val
         self.next = next
 
+    def __iter__(self):
+        current = self
+        while current:
+            yield current.val
+            current = current.next
+
+
 def reverse_list(head):
     prev = None
     current = head
@@ -13,23 +20,16 @@ def reverse_list(head):
         current = next_node
     return prev
 
+
 if __name__ == '__main__':
     # Tests
     head = Node(1, Node(2, Node(3, Node(4))))
 
-    # helper to print list
-    def print_list(node):
-        res = []
-        while node:
-            res.append(node.val)
-            node = node.next
-        return res
-
-    print("Original list:", print_list(head))
+    print("Original list:", list(head))
     reversed_head = reverse_list(head)
-    print("Reversed list:", print_list(reversed_head))
+    print("Reversed list:", list(reversed_head))
 
-    assert print_list(reversed_head) == [4, 3, 2, 1]
+    assert list(reversed_head) == [4, 3, 2, 1]
 
     # Test empty list
     assert reverse_list(None) is None
@@ -37,6 +37,6 @@ if __name__ == '__main__':
     # Test single node
     single = Node(1)
     rev_single = reverse_list(single)
-    assert print_list(rev_single) == [1]
+    assert list(rev_single) == [1]
 
     print("All tests passed!")
