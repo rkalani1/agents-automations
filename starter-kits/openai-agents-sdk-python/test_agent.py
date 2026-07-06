@@ -72,5 +72,44 @@ class TestSafePath(unittest.TestCase):
             if outside_file.exists():
                 outside_file.unlink()
 
+class TestReadNotes(unittest.TestCase):
+    def setUp(self):
+        self.test_dir = tempfile.TemporaryDirectory()
+        self.sandbox_path = pathlib.Path(self.test_dir.name).resolve()
+
+        self.original_sandbox = agent.SANDBOX_DIR
+        agent.SANDBOX_DIR = self.sandbox_path
+
+    def tearDown(self):
+        agent.SANDBOX_DIR = self.original_sandbox
+        self.test_dir.cleanup()
+
+    def test_read_notes_success(self):
+        """Test reading an existing file inside the sandbox."""
+        note_content = "This is a test note."
+        note_path = self.sandbox_path / "note.txt"
+        note_path.write_text(note_content, encoding="utf-8")
+
+        result = agent._read_notes_impl("note.txt")
+        self.assertEqual(result, note_content)
+
+    def test_read_notes_file_not_found(self):
+        """Test reading a non-existent file inside the sandbox."""
+        with self.assertRaisesRegex(FileNotFoundError, "File not found in sandbox: missing.txt"):
+            agent._read_notes_impl("missing.txt")
+
+    def test_read_notes_is_directory(self):
+        """Test reading a directory instead of a file inside the sandbox."""
+        dir_path = self.sandbox_path / "folder"
+        dir_path.mkdir()
+
+        with self.assertRaisesRegex(FileNotFoundError, "File not found in sandbox: folder"):
+            agent._read_notes_impl("folder")
+
+    def test_read_notes_permission_error(self):
+        """Test reading a file outside the sandbox."""
+        with self.assertRaisesRegex(PermissionError, "resolves outside sandbox directory"):
+            agent._read_notes_impl("../outside.txt")
+
 if __name__ == '__main__':
     unittest.main()
