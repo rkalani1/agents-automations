@@ -119,7 +119,7 @@ const SYSTEM_PROMPT = `You are a note summarization assistant. Read the plain-te
 via the read_notes tool and produce a structured summary (300-500 words) of key themes, decisions, \
 and action items. Do not add information not present in the source files. Output format: markdown.`;
 
-function getValidNoteFiles(notesDir: string): string[] {
+export function getValidNoteFiles(notesDir: string): string[] {
   if (!fs.existsSync(notesDir)) {
     console.error(`ERROR: Sandbox notes directory not found: ${notesDir}`);
     console.error("Create ./sandbox/notes/ and add .txt files before running.");
