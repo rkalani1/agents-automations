@@ -759,6 +759,7 @@ Provide:
     "systemPrompt": "You are a concise researcher utilizing real-time X search results."
   }
 }`
+    }
     
   };
 
@@ -882,36 +883,66 @@ Provide:
 
     // 2. Render official app links
     if (appLinksContainer) {
-      appLinksContainer.innerHTML = data.officialLinks.map((link, idx) => {
-        const cls = idx === 0 ? "button primary" : "button";
-        return `<a class="${cls}" href="${link.url}" target="_blank">${link.text}</a>`;
-      }).join("");
+      appLinksContainer.innerHTML = "";
+      data.officialLinks.forEach((link, idx) => {
+        const a = document.createElement("a");
+        a.className = idx === 0 ? "button primary" : "button";
+        a.href = link.url;
+        a.target = "_blank";
+        a.textContent = link.text;
+        appLinksContainer.appendChild(a);
+      });
     }
 
     // 3. Render setup cards
     if (setupCardsContainer) {
-      setupCardsContainer.innerHTML = data.setupCards.map((card, idx) => {
+      setupCardsContainer.innerHTML = "";
+      data.setupCards.forEach((card, idx) => {
+        const li = document.createElement("li");
+        li.className = "setup-card";
+
+        const h3 = document.createElement("h3");
+        h3.textContent = card.title;
+
+        const pDesc = document.createElement("p");
+        pDesc.textContent = card.desc;
+
+        const pLinks = document.createElement("p");
+        pLinks.className = "card-links";
+        pLinks.innerHTML = card.links; // links is expected to contain safe html tags like <a>
+
         if (idx === 1) {
           // Add personalization instructions textarea
-          return `<li class="setup-card">
-            <div class="prompt-head compact-head"><h3>${card.title}</h3><button class="button small copy" data-copy-target="setup-personal-instr" type="button">Copy</button></div>
-            <p>${card.desc}</p>
-            <p class="card-links">${card.links}</p>
-            <textarea id="setup-personal-instr" readonly rows="8">Help me write custom instructions for ${data.name}.
-Ask me four questions, one at a time, about:
-- Tone and formality I prefer.
-- Detail level I want by default.
-- When you should ask before answering.
-- Topics or formats to avoid.
-After I answer, propose a short, edit-ready instructions block. Keep it under 120 words.</textarea>
-          </li>`;
+          const headDiv = document.createElement("div");
+          headDiv.className = "prompt-head compact-head";
+
+          const copyBtn = document.createElement("button");
+          copyBtn.className = "button small copy";
+          copyBtn.setAttribute("data-copy-target", "setup-personal-instr");
+          copyBtn.type = "button";
+          copyBtn.textContent = "Copy";
+
+          headDiv.appendChild(h3);
+          headDiv.appendChild(copyBtn);
+
+          const textarea = document.createElement("textarea");
+          textarea.id = "setup-personal-instr";
+          textarea.readOnly = true;
+          textarea.rows = 8;
+          textarea.value = `Help me write custom instructions for ${data.name}.\nAsk me four questions, one at a time, about:\n- Tone and formality I prefer.\n- Detail level I want by default.\n- When you should ask before answering.\n- Topics or formats to avoid.\nAfter I answer, propose a short, edit-ready instructions block. Keep it under 120 words.`;
+
+          li.appendChild(headDiv);
+          li.appendChild(pDesc);
+          li.appendChild(pLinks);
+          li.appendChild(textarea);
+        } else {
+          li.appendChild(h3);
+          li.appendChild(pDesc);
+          li.appendChild(pLinks);
         }
-        return `<li class="setup-card">
-          <h3>${card.title}</h3>
-          <p>${card.desc}</p>
-          <p class="card-links">${card.links}</p>
-        </li>`;
-      }).join("");
+        setupCardsContainer.appendChild(li);
+      });
+
       // Bind copy listener to setup-card textarea
       const copyBtn = setupCardsContainer.querySelector(".copy");
       if (copyBtn) {
