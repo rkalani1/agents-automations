@@ -83,7 +83,7 @@ export function safePath(relativePath: string): string {
  * @throws Error if path resolves outside the sandbox.
  * @throws Error if the file does not exist.
  */
-function readNotes(filePath: string): string {
+export function readNotes(filePath: string): string {
   const safe = safePath(filePath);
   if (!fs.existsSync(safe)) {
     throw new Error(`File not found in sandbox: ${filePath}`);
