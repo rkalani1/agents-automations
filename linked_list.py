@@ -7,7 +7,7 @@ def reverse_list(head):
     prev = None
     current = head
     while current:
-        next_node = current.next  # Fix: save the next node before overwriting
+        next_node = current.next
         current.next = prev
         prev = current
         current = next_node
