@@ -72,6 +72,13 @@ def _safe_path(path: str) -> pathlib.Path:
 # ---------------------------------------------------------------------------
 # TOOL DEFINITION
 # ---------------------------------------------------------------------------
+def _read_notes_impl(path: str) -> str:
+    """Core implementation for reading a note file."""
+    safe = _safe_path(path)
+    if not safe.is_file():
+        raise FileNotFoundError(f"File not found in sandbox: {path}")
+    return safe.read_text(encoding="utf-8")
+
 @function_tool
 def read_notes(path: str) -> str:
     """
@@ -87,10 +94,7 @@ def read_notes(path: str) -> str:
         PermissionError: If path resolves outside the sandbox.
         FileNotFoundError: If the file does not exist.
     """
-    safe = _safe_path(path)
-    if not safe.is_file():
-        raise FileNotFoundError(f"File not found in sandbox: {path}")
-    return safe.read_text(encoding="utf-8")
+    return _read_notes_impl(path)
 
 
 # ---------------------------------------------------------------------------
