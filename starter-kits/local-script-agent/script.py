@@ -17,6 +17,7 @@ docs/platforms/local-scripts.md
 import os
 import sys
 import pathlib
+import itertools
 from concurrent.futures import ThreadPoolExecutor
 
 # ---------------------------------------------------------------------------
@@ -134,8 +135,12 @@ def main() -> None:
         print("Create ./sandbox/notes/ and add .txt files.", file=sys.stderr)
         sys.exit(1)
 
-    note_files = sorted(NOTES_DIR.glob("*.txt")) + sorted(NOTES_DIR.glob("*.md"))
-    note_files = note_files[:MAX_FILES]
+    note_files = list(
+        itertools.islice(
+            itertools.chain(NOTES_DIR.glob("*.txt"), NOTES_DIR.glob("*.md")),
+            MAX_FILES
+        )
+    )
 
     if not note_files:
         print("ERROR: No .txt or .md files found in ./sandbox/notes/", file=sys.stderr)
