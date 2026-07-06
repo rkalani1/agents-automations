@@ -14,6 +14,8 @@ docs/platforms/local-scripts.md
 # 0 9 * * 1 OPERATOR_APPROVED_TO_RUN=1 /path/to/venv/bin/python /path/to/script.py >> /var/log/notes-summary.log 2>&1
 """
 
+from __future__ import annotations
+
 import os
 import sys
 import pathlib

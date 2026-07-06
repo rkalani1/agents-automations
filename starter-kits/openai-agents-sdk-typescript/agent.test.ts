@@ -1,4 +1,4 @@
-import { safePath, SANDBOX_DIR, getValidNoteFiles } from './agent';
+import { safePath, SANDBOX_DIR, getValidNoteFiles, readNotes } from './agent';
 import * as path from 'path';
 import * as fs from 'fs';
 
@@ -47,7 +47,8 @@ describe('safePath', () => {
   });
 
   it('should prevent symlink traversal attacks', () => {
-    const fs = require('fs');
+    const actualFs = jest.requireActual('fs') as typeof fs;
+    (fs.existsSync as jest.Mock).mockImplementation(actualFs.existsSync);
     // Create a sandbox dir and a file outside it for testing
     fs.mkdirSync('./sandbox', { recursive: true });
     fs.mkdirSync('./outside', { recursive: true });
@@ -65,6 +66,10 @@ describe('safePath', () => {
 
     const newSymlinkPath = 'link/new_secret.txt';
     expect(() => safePath(newSymlinkPath)).toThrow();
+
+    fs.rmSync('./sandbox', { recursive: true, force: true });
+    fs.rmSync('./outside', { recursive: true, force: true });
+    (fs.existsSync as jest.Mock).mockReset();
   });
 });
 
@@ -137,5 +142,50 @@ describe('getValidNoteFiles', () => {
     expect(result.length).toBe(50);
     expect(exitSpy).not.toHaveBeenCalled();
     expect(consoleErrorSpy).not.toHaveBeenCalled();
+  });
+});
+
+describe('readNotes', () => {
+  const actualFs = jest.requireActual('fs') as typeof fs;
+  const testDir = path.join(SANDBOX_DIR, 'test_notes');
+  const testFile = path.join(testDir, 'test.txt');
+
+  beforeAll(() => {
+    (fs.existsSync as jest.Mock).mockImplementation(actualFs.existsSync);
+    (fs.readdirSync as jest.Mock).mockImplementation(actualFs.readdirSync);
+    if (!fs.existsSync(SANDBOX_DIR)) {
+      fs.mkdirSync(SANDBOX_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(testDir)) {
+      fs.mkdirSync(testDir, { recursive: true });
+    }
+  });
+
+  afterAll(() => {
+    if (fs.existsSync(testDir)) {
+      fs.rmSync(testDir, { recursive: true, force: true });
+    }
+    (fs.existsSync as jest.Mock).mockReset();
+    (fs.readdirSync as jest.Mock).mockReset();
+  });
+
+  it('should read a valid file', () => {
+    const content = 'This is a test note.';
+    fs.writeFileSync(testFile, content, 'utf-8');
+
+    const result = readNotes('test_notes/test.txt');
+    expect(result).toBe(content);
+  });
+
+  it('should throw an error if the file does not exist', () => {
+    expect(() => readNotes('test_notes/nonexistent.txt')).toThrow(
+      'File not found in sandbox: test_notes/nonexistent.txt'
+    );
+  });
+
+  it('should throw an error if the path is not a file', () => {
+    expect(() => readNotes('test_notes')).toThrow(
+      'Path is not a file: test_notes'
+    );
   });
 });
