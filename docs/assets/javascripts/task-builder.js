@@ -1052,12 +1052,13 @@ function buildJSON(state, rec) {
     if (!root) return;
     const form = document.getElementById("tb-form");
     if (!form) return;
+    const modeInputs = $$("input[name='mode']", root);
 
     // ---- helpers -----------------------------------------------------------
 
     function readForm() {
       const data = {
-        mode: ($$("input[name='mode']", root).find(i => i.checked) || {}).value || "beginner",
+        mode: (modeInputs.find(i => i.checked) || {}).value || "beginner",
         primary_app: ($$("input[name='primary_app']", form).find(i => i.checked) || {}).value || "chatgpt",
         comfort: ($$("input[name='comfort']", form).find(i => i.checked) || {}).value || "beginner",
         jobs: $$("input[name='jobs']:checked", form).map(i => i.value),
@@ -1083,7 +1084,11 @@ function buildJSON(state, rec) {
     function applyToForm(data) {
       if (!data) return;
       const radio = (name, val) => {
-        $$("input[name='" + name + "']", root).forEach(i => { i.checked = (i.value === val); });
+        if (name === "mode") {
+          modeInputs.forEach(i => { i.checked = (i.value === val); });
+        } else {
+          $$("input[name='" + name + "']", root).forEach(i => { i.checked = (i.value === val); });
+        }
       };
       if (data.mode) radio("mode", data.mode);
       if (data.primary_app) radio("primary_app", data.primary_app);
@@ -1130,7 +1135,7 @@ function buildJSON(state, rec) {
         developer: "developer"
       })[state.comfort] || state.mode;
       if (MODE_RANK[wantedFromComfort] > MODE_RANK[state.mode]) {
-        const r = $$("input[name='mode']", root).find(i => i.value === wantedFromComfort);
+        const r = modeInputs.find(i => i.value === wantedFromComfort);
         if (r) { r.checked = true; state.mode = wantedFromComfort; }
       }
       applyModeVisibility(state.mode);
@@ -1300,7 +1305,7 @@ function buildJSON(state, rec) {
 
     form.addEventListener("input", render);
     form.addEventListener("change", render);
-    $$("input[name='mode']", root).forEach(i => i.addEventListener("change", render));
+    modeInputs.forEach(i => i.addEventListener("change", render));
     render();
   }
 
