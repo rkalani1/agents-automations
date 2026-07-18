@@ -9,6 +9,7 @@ copyright: 'Released under the MIT License. An independent educational reference
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.tracking
