@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Schematic of a ChatGPT Task: a saved prompt + cadence + timezone running automatically and posting back into a chat thread">
+<defs>
+<style>
+text { font: 14px system-ui, -apple-system, sans-serif; fill: #222; }
+.h { font-weight: 600; }
+.sub { font-size: 12px; fill: #555; }
+.box { fill: #fff; stroke: #888; }
+.accent { fill: #eef5ff; stroke: #3a6ea5; }
+.warn { fill: #fff7e6; stroke: #b8860b; }
+.arrow { stroke: #3a6ea5; stroke-width: 1.5; fill: none; marker-end: url(#a); }
+</style>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#3a6ea5"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="720" height="320" fill="#fafafa"/>
+<text x="20" y="28" class="h">ChatGPT Task (schematic)</text>
+<text x="20" y="46" class="sub">A saved prompt + cadence + timezone. Result posts back into the chat thread.</text>
+<rect x="20" y="70" width="220" height="200" class="box accent"/>
+<text x="32" y="92" class="h">1. Saved prompt</text>
+<text x="32" y="112" class="sub">Self-contained. References</text>
+<text x="32" y="128" class="sub">{{TODAY}} for the date.</text>
+<text x="32" y="144" class="sub">Drafts only.</text>
+<text x="32" y="170" class="h">2. Cadence</text>
+<text x="32" y="188" class="sub">Daily / weekly / hourly</text>
+<text x="32" y="204" class="sub">(platform-allowed only)</text>
+<text x="32" y="230" class="h">3. Timezone</text>
+<text x="32" y="248" class="sub">Always set explicitly.</text>
+<rect x="270" y="70" width="220" height="200" class="box"/>
+<text x="282" y="92" class="h">ChatGPT runs the prompt</text>
+<text x="282" y="116" class="sub">No human in the loop at run-time.</text>
+<text x="282" y="138" class="sub">Output appears as a new</text>
+<text x="282" y="156" class="sub">message in the chat thread.</text>
+<text x="282" y="184" class="sub">Failure surfaces as an error</text>
+<text x="282" y="202" class="sub">in the same thread.</text>
+<text x="282" y="230" class="sub">Pause / delete from</text>
+<text x="282" y="248" class="sub">profile menu → Tasks.</text>
+<rect x="520" y="70" width="180" height="200" class="box warn"/>
+<text x="532" y="92" class="h">Safety drill</text>
+<text x="532" y="114" class="sub">3 clean manual runs first.</text>
+<text x="532" y="132" class="sub">Drafts-only by default.</text>
+<text x="532" y="150" class="sub">Document the off-switch.</text>
+<text x="532" y="168" class="sub">Set a cost cap if available.</text>
+<text x="532" y="186" class="sub">Pause if it fails twice.</text>
+<text x="532" y="220" class="sub">See: docs/no-code-</text>
+<text x="532" y="236" class="sub">automations/</text>
+<path class="arrow" d="M240 170 L268 170"/>
+<path class="arrow" d="M490 170 L518 170"/>
+</svg>

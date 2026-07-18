@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Schematic of Grok chat: a fresh chat thread with system prompt as message 1 and the prompt as message 2">
+<defs>
+<style>
+text { font: 14px system-ui, -apple-system, sans-serif; fill: #222; }
+.h { font-weight: 600; }
+.sub { font-size: 12px; fill: #555; }
+.box { fill: #fff; stroke: #888; }
+.accent { fill: #f7eeee; stroke: #993333; }
+.muted { fill: #f6f6f6; stroke: #bbb; }
+</style>
+</defs>
+<rect x="0" y="0" width="720" height="280" fill="#fafafa"/>
+<text x="20" y="28" class="h">Grok consumer chat (schematic)</text>
+<text x="20" y="46" class="sub">No Projects on most plans. Fallback: paste system prompt as message 1 and the task prompt as message 2.</text>
+<rect x="20" y="70" width="280" height="180" class="box muted"/>
+<text x="32" y="92" class="h">Sidebar</text>
+<text x="32" y="112" class="sub">+ New chat</text>
+<text x="32" y="132" class="sub">Saved chats</text>
+<text x="32" y="160" class="sub">Personalisation</text>
+<text x="32" y="176" class="sub">(where rolled out): tone,</text>
+<text x="32" y="192" class="sub">role, "avoid" list — saved.</text>
+<rect x="320" y="70" width="380" height="180" class="box accent"/>
+<text x="332" y="92" class="h">Chat thread</text>
+<rect x="332" y="106" width="356" height="50" class="box"/>
+<text x="344" y="126" class="sub">Message 1 (you): system prompt — paste your reusable</text>
+<text x="344" y="142" class="sub">instructions (tone, format, refusal rules, drafts-only).</text>
+<rect x="332" y="166" width="356" height="36" class="box"/>
+<text x="344" y="186" class="sub">Message 2 (you): the task prompt for this run.</text>
+<rect x="332" y="210" width="356" height="32" class="box"/>
+<text x="344" y="230" class="sub">Message 3 (Grok): the response.</text>
+</svg>

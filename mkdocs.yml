@@ -1,8 +1,11 @@
 site_name: Agents and Automations
 site_description: A practical, vendor-neutral portal for designing, configuring, testing, and operating AI agents and workflow automations across Claude, Gemini, ChatGPT/OpenAI, and adjacent surfaces.
 site_author: Agents and Automations contributors
-site_url: https://example.github.io/agents-automations/
-copyright: 'Released under the MIT License. Trademarks belong to their respective owners.<br>This is a synthetic public demo site for educational and reference purposes only. Not for clinical decision-making or real patient care.<br><a href="https://www.washington.edu/online/terms/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline; margin-right: 15px;">University Website Terms</a><a href="https://www.washington.edu/online/privacy/" target="_blank" rel="noopener noreferrer" style="color: #4f46e5; text-decoration: underline;">University Online Privacy Policy</a>'
+site_url: https://rkalani1.github.io/agents-automations/
+repo_url: https://github.com/rkalani1/agents-automations
+repo_name: rkalani1/agents-automations
+edit_uri: edit/main/docs/
+copyright: 'Released under the MIT License. An independent educational reference — not affiliated with or endorsed by any AI vendor or institution. Trademarks belong to their respective owners.<br>All examples are synthetic. Not for clinical decision-making or real patient care.'
 
 theme:
   name: material
@@ -77,7 +80,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/example/agents-automations
+      link: https://github.com/rkalani1/agents-automations
 
 extra_css:
   - assets/stylesheets/task-builder.css

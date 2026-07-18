@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Live URL | https://example.github.io/agents-automations/ |
+| Live URL | https://rkalani1.github.io/agents-automations/ |
 | Source branch | `main` |
 | Build source | GitHub Actions (`build_type=workflow`) |
 | Deploy workflow | [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) |

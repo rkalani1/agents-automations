@@ -51,7 +51,7 @@ These are scoped to the workflow file. No personal access token is used.
 ## Local development
 
 ```bash
-git clone https://github.com/example/agents-automations.git
+git clone https://github.com/rkalani1/agents-automations.git
 cd agents-automations
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt

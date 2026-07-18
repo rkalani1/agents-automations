@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Schematic of a Claude Skill: SKILL.md + templates folder + resources folder">
+<defs>
+<style>
+text { font: 14px system-ui, -apple-system, sans-serif; fill: #222; }
+.h { font-weight: 600; }
+.sub { font-size: 12px; fill: #555; }
+.box { fill: #fff; stroke: #888; }
+.accent { fill: #f3eefa; stroke: #6a3a9a; }
+</style>
+</defs>
+<rect x="0" y="0" width="720" height="360" fill="#fafafa"/>
+<text x="20" y="28" class="h">Claude Skill (schematic)</text>
+<text x="20" y="46" class="sub">A folder packaging a SKILL.md + templates + resources. Loaded by Claude on demand.</text>
+<rect x="20" y="70" width="680" height="60" class="box accent"/>
+<text x="32" y="92" class="h">my-skill/</text>
+<text x="32" y="112" class="sub">A directory you author. Versioned in your team drive or a repo.</text>
+<rect x="20" y="150" width="220" height="180" class="box"/>
+<text x="32" y="172" class="h">SKILL.md</text>
+<text x="32" y="192" class="sub">Metadata (name, version, description)</text>
+<text x="32" y="210" class="sub">## Purpose — one paragraph</text>
+<text x="32" y="228" class="sub">## Instructions — second-person</text>
+<text x="32" y="246" class="sub">## Templates — links to template files</text>
+<text x="32" y="264" class="sub">## Resources — links to data files</text>
+<text x="32" y="294" class="sub">## When to use this skill</text>
+<text x="32" y="312" class="sub">## When NOT to use this skill</text>
+<rect x="260" y="150" width="200" height="180" class="box"/>
+<text x="272" y="172" class="h">templates/</text>
+<text x="272" y="192" class="sub">email-template.md</text>
+<text x="272" y="210" class="sub">brief-template.md</text>
+<text x="272" y="228" class="sub">report-template.md</text>
+<text x="272" y="258" class="sub">Scaffolds Claude</text>
+<text x="272" y="276" class="sub">fills in.</text>
+<rect x="480" y="150" width="220" height="180" class="box"/>
+<text x="492" y="172" class="h">resources/</text>
+<text x="492" y="192" class="sub">style-guide.md</text>
+<text x="492" y="210" class="sub">team-norms.md</text>
+<text x="492" y="228" class="sub">approved-vendors.json</text>
+<text x="492" y="258" class="sub">Reference data the</text>
+<text x="492" y="276" class="sub">Skill consults but</text>
+<text x="492" y="294" class="sub">does not modify.</text>
+</svg>
