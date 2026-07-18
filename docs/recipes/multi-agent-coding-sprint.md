@@ -120,8 +120,11 @@ def run_tests(test_command: str) -> dict:
     except ValueError as e:
         return {"stdout": "", "stderr": f"Error parsing command: {e}", "exit_code": 1}
 
-    if not args or args[0] not in ["pytest", "npm"]:
-        return {"stdout": "", "stderr": "Command not allowed. Only pytest or npm are permitted.", "exit_code": 1}
+    # Exact-command allowlist: only `pytest ...` or `npm test` — any other
+    # npm subcommand (install, run, exec, ...) is rejected.
+    ALLOWED_PREFIXES = (["pytest"], ["npm", "test"])
+    if not any(args[: len(prefix)] == prefix for prefix in ALLOWED_PREFIXES):
+        return {"stdout": "", "stderr": "Command not allowed. Only 'pytest' or 'npm test' are permitted.", "exit_code": 1}
 
     result = subprocess.run(
         args, shell=False, cwd=SANDBOX,
@@ -191,7 +194,8 @@ def main():
 
     result = Runner.run_sync(
         planner_agent,
-        f"Task: {args.task}\nSandbox: {args.sandbox}"
+        f"Task: {args.task}\nSandbox: {args.sandbox}",
+        max_turns=20,
     )
     print(result.final_output)
 
