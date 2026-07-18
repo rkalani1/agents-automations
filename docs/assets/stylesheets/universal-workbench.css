@@ -188,7 +188,7 @@ main {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted-2);
-}.universal-workbench .hero::before { content: "01 — Start here"; left: 0; }.universal-workbench .hero::after { content: "Beginner-first, jargon-free"; right: 0; }.universal-workbench .hero-copy h1 {
+}.universal-workbench .hero::before { content: "01 — Start here"; left: 0; }.universal-workbench .hero::after { content: "Beginner-first, jargon-free"; right: 0; }.universal-workbench .hero-copy h1, .universal-workbench .hero-copy .hero-display {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(3.6rem, 11vw, 9rem);
@@ -196,7 +196,7 @@ main {
   letter-spacing: -0.025em;
   margin: 0 0 1.5rem;
   color: var(--ink);
-}.universal-workbench .hero-copy h1 em, .universal-workbench .hero-copy h1 i { font-style: italic; color: var(--rust-deep); }.universal-workbench .lede {
+}.universal-workbench .hero-copy h1 em, .universal-workbench .hero-copy h1 i, .universal-workbench .hero-copy .hero-display em, .universal-workbench .hero-copy .hero-display i { font-style: italic; color: var(--rust-deep); }.universal-workbench .lede {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
@@ -775,7 +775,7 @@ details { border-radius: var(--radius); }.universal-workbench details > summary 
     flex-direction: column;
     align-items: flex-start;
     gap: 0.7rem;
-  }.universal-workbench .top-nav { gap: 1rem; }.universal-workbench .hero { grid-template-columns: 1fr; }.universal-workbench .hero::after { display: none; }.universal-workbench .hero-copy h1 { font-size: clamp(3rem, 14vw, 5rem); }.universal-workbench .task-tool { display: block; }.universal-workbench .task-options, .universal-workbench .task-result { width: 100%; }.universal-workbench .setup-grid, .universal-workbench .feature-grid { grid-template-columns: 1fr; }
+  }.universal-workbench .top-nav { gap: 1rem; }.universal-workbench .hero { grid-template-columns: 1fr; }.universal-workbench .hero::after { display: none; }.universal-workbench .hero-copy h1, .universal-workbench .hero-copy .hero-display { font-size: clamp(3rem, 14vw, 5rem); }.universal-workbench .task-tool { display: block; }.universal-workbench .task-options, .universal-workbench .task-result { width: 100%; }.universal-workbench .setup-grid, .universal-workbench .feature-grid { grid-template-columns: 1fr; }
 }@media (max-width: 720px) {.universal-workbench .surface-grid {
     display: grid;
     grid-auto-flow: column;

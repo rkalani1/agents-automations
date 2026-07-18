@@ -188,7 +188,7 @@ main {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted-2);
-}.claude-workbench .hero::before { content: "01 — Start here"; left: 0; }.claude-workbench .hero::after { content: "Beginner-first, jargon-free"; right: 0; }.claude-workbench .hero-copy h1 {
+}.claude-workbench .hero::before { content: "01 — Start here"; left: 0; }.claude-workbench .hero::after { content: "Beginner-first, jargon-free"; right: 0; }.claude-workbench .hero-copy h1, .claude-workbench .hero-copy .hero-display {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(3.6rem, 11vw, 9rem);
@@ -196,7 +196,7 @@ main {
   letter-spacing: -0.025em;
   margin: 0 0 1.5rem;
   color: var(--ink);
-}.claude-workbench .hero-copy h1 em, .claude-workbench .hero-copy h1 i { font-style: italic; color: var(--rust-deep); }.claude-workbench .lede {
+}.claude-workbench .hero-copy h1 em, .claude-workbench .hero-copy h1 i, .claude-workbench .hero-copy .hero-display em, .claude-workbench .hero-copy .hero-display i { font-style: italic; color: var(--rust-deep); }.claude-workbench .lede {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
@@ -775,7 +775,7 @@ details { border-radius: var(--radius); }.claude-workbench details > summary {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.7rem;
-  }.claude-workbench .top-nav { gap: 1rem; }.claude-workbench .hero { grid-template-columns: 1fr; }.claude-workbench .hero::after { display: none; }.claude-workbench .hero-copy h1 { font-size: clamp(3rem, 14vw, 5rem); }.claude-workbench .task-tool { display: block; }.claude-workbench .task-options, .claude-workbench .task-result { width: 100%; }.claude-workbench .setup-grid, .claude-workbench .feature-grid { grid-template-columns: 1fr; }
+  }.claude-workbench .top-nav { gap: 1rem; }.claude-workbench .hero { grid-template-columns: 1fr; }.claude-workbench .hero::after { display: none; }.claude-workbench .hero-copy h1, .claude-workbench .hero-copy .hero-display { font-size: clamp(3rem, 14vw, 5rem); }.claude-workbench .task-tool { display: block; }.claude-workbench .task-options, .claude-workbench .task-result { width: 100%; }.claude-workbench .setup-grid, .claude-workbench .feature-grid { grid-template-columns: 1fr; }
 }@media (max-width: 720px) {.claude-workbench .surface-grid {
     display: grid;
     grid-auto-flow: column;
