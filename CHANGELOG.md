@@ -2,10 +2,35 @@
 
 All notable changes to this guide are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The site-rendered version of this file lives at [`docs/changelog.md`](docs/changelog.md) and is kept in sync.
 
+## [0.7.0] — 2026-07-18 — Deep review: currency, IA, and safety pass
+
+### Fixed
+- Replaced every remaining `example.github.io` / `github.com/example` scaffold placeholder with the real `rkalani1/agents-automations` URLs, including `site_url` — the live site's canonical URLs, `og:url` tags, and `sitemap.xml` now point at the real domain once deployed.
+- The Claude-mastery redirect stub and changelog pointed at claude.ai instead of the standalone [Learn Claude](https://rkalani1.github.io/claude/) site; both now link the correct site.
+- Crashing or non-working code samples: the Gemini recipes' `FunctionDeclaration.from_function` calls (method does not exist; replaced with `from_callable_with_api_option`, runtime-verified on google-genai 2.12.1), the Codex recipe's removed `codex auth login` / `--approval-mode` commands, the Agents SDK streaming example, and the Grok tool-calling recipe's flat tool format (now the official nested format).
+- Repaired the workbench stylesheets, whose mechanical scope-prefixing had silently dropped the variable block, font import, and print styles; the workbenches now also follow Material's dark mode.
+- Eleven long-standing internal-link failures that had kept the gating link-check red since June; the check now passes.
+
+### Changed
+- Navigation consolidated from 21 to 13 beginner-first top-level tabs (new "Learn" and "Choose a tool" groups; no URLs changed). The three-item "Clinical Workflows" tab was retired: its recipes are now in the Recipes index (per ADR 0004) and the example toolkit page lives under MCP & Connectors.
+- Footer replaced with a neutral MIT/educational notice; the guide no longer links institutional terms pages that could read as endorsement.
+- Claude mastery routing: the standalone Learn Claude site is presented as canonical from the homepage and Mastery hub; the embedded copy is labeled as a snapshot.
+- Model recommendations across Gemini and Grok pages now use the env-var pattern (`GEMINI_MODEL`, `XAI_MODEL`) instead of hard-coded model IDs that had already been retired.
+- MCP security guidance replaced keyword deny-list "sanitization" advice with least-privilege and human-confirmation guidance, and corrected the malicious-server reporting channel.
+- Clinical-adjacent recipes carry a standard "Educational example only" admonition (not clinical decision support; synthetic or published content only).
+
+### Added
+- A quiet [`llms.txt`](https://rkalani1.github.io/agents-automations/llms.txt) with the section index, the synthetic-data boundary, and the sourcing policy.
+- Keyboard (arrow-key) navigation for the Universal Workbench model tablist.
+- Sourced-and-dated headers on the interactive workbench and toolkit pages.
+
+### Verified
+- Full currency audit against official vendor documentation (2026-07-18). Pages whose sources could be fetched directly (Anthropic docs, MCP spec and SDK repos, OpenAI/xAI GitHub sources, google-genai runtime checks) carry a bumped **Last verified** date; pages whose vendors' doc hosts could only be checked via official-source search snapshots (ChatGPT consumer, Copilot, Grok consumer, Google consumer surfaces) keep their original date plus a **Partially re-verified: 2026-07-18** note with raised drift risk, per ADR 0002.
+
 ## [0.6.1] — 2026-05-06 — Standalone Claude site
 
 ### Changed
-- Claude guidance now lives at the separate [Claude site](https://claude.ai/) instead of inside the Field Guide navigation.
+- Claude guidance now lives at the separate [Learn Claude site](https://rkalani1.github.io/claude/) instead of inside the Field Guide navigation.
 - `docs/index.md`, `docs/mastery/index.md`, examples, source audit, and Claude redirect page now point to the standalone site.
 - Removed Field Guide loading of the Claude-only CSS and JavaScript assets.
 
@@ -138,9 +163,9 @@ All notable changes to this guide are documented here. Format loosely follows [K
 - Source map (`docs/source-map.md`): expanded with additional Anthropic, OpenAI, Google, GitHub, and MCP references used by the new content.
 
 ### Verified
-- `mkdocs build --strict` exits 0. The build emits the upstream Material for MkDocs informational banner about the future MkDocs 2.0 release — this is upstream output from the theme, not a project warning. The build also prints INFO-level notices for the 41 recipes that are intentionally accessed via the categorized [Recipes index](/agents-automations/recipes/) rather than the top-level nav (see [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md)).
+- `mkdocs build --strict` exits 0. The build emits the upstream Material for MkDocs informational banner about the future MkDocs 2.0 release — this is upstream output from the theme, not a project warning. The build also prints INFO-level notices for the 41 recipes that are intentionally accessed via the categorized [Recipes index](docs/recipes/index.md) rather than the top-level nav (see [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md)).
 - GitHub Pages production deployment via `actions/deploy-pages@v4` succeeds from `main`.
-- Live site: https://example.github.io/agents-automations/.
+- Live site: https://rkalani1.github.io/agents-automations/.
 
 ## [0.1.0] — 2026-05-06 — Initial public release
 

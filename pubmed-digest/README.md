@@ -153,7 +153,7 @@ preprints:
 
 ### macOS — `launchd` (recommended on Macs)
 
-Create `~/Library/LaunchAgents/edu.uw.stroke-digest.plist`:
+Create `~/Library/LaunchAgents/io.github.rkalani1.stroke-digest.plist`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -161,7 +161,7 @@ Create `~/Library/LaunchAgents/edu.uw.stroke-digest.plist`:
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key>            <string>edu.uw.stroke-digest</string>
+  <key>Label</key>            <string>io.github.rkalani1.stroke-digest</string>
   <key>ProgramArguments</key>
   <array>
     <string>/Users/you/pubmed-digest/.venv/bin/python</string>
@@ -183,8 +183,8 @@ Create `~/Library/LaunchAgents/edu.uw.stroke-digest.plist`:
 Load it:
 
 ```bash
-launchctl load ~/Library/LaunchAgents/edu.uw.stroke-digest.plist
-# unload with:  launchctl unload ~/Library/LaunchAgents/edu.uw.stroke-digest.plist
+launchctl load ~/Library/LaunchAgents/io.github.rkalani1.stroke-digest.plist
+# unload with:  launchctl unload ~/Library/LaunchAgents/io.github.rkalani1.stroke-digest.plist
 ```
 
 ### Linux / generic — `cron`

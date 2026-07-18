@@ -14,7 +14,7 @@ You do not need to read this site front to back. Start with the row that matches
 | If you are... | Do this first | You should have by the end |
 |---|---|---|
 | An absolute beginner | [Open the Task Builder](task-builder/index.md), leave **Beginner Mode** on, and describe one real task. | A prompt to paste, exact clicks, and a safe fallback using the AI app you already have. |
-| Learning Claude specifically | [Open the Claude track](mastery/claude.md) and follow Day 0 before exploring advanced features. | Account instructions, one Project, a reusable prompt kit, and a safe path to Skills, connectors, and Claude Code. |
+| Learning Claude specifically | Open the standalone [Learn Claude](https://rkalani1.github.io/claude/) guide; use the in-repo [Claude workbench](mastery/claude.md) for quick-task prompts. | Account instructions, one Project, a reusable prompt kit, and a safe path to Skills, connectors, and Claude Code. |
 | Trying to get more value from one subscription | Run the [7-mission learning path](learning-path/index.md). | A portable AI profile, reusable prompt, Project/Gem/Space, citation habit, and evaluation routine. |
 | Choosing between ChatGPT, Claude, Gemini, Grok, Perplexity, or Copilot | Use the [Capability map](capability-map/index.md) and [Mastery hub](mastery/index.md). | A deliberate tool choice for each recurring workflow instead of defaulting to whichever tab is open. |
 | Building a real agent or coding workflow | Start with [Agent Factory](agent-factory/index.md), [Evals & safety](evals/index.md), and [Starter kits](starter-kits.md). | A scoped agent spec, tool allowlist, eval set, red-team probes, and launch checklist. |
@@ -34,9 +34,9 @@ You do not need to read this site front to back. Start with the row that matches
 
     ---
 
-    Standalone step-by-step Claude setup for beginners, then Projects, memory, Artifacts, Skills, connectors, Claude Code, and expert reliability habits.
+    Step-by-step Claude setup for beginners, then Projects, memory, Artifacts, Skills, connectors, Claude Code, and expert reliability habits — on the standalone Learn Claude site.
 
-    [→ Claude mastery](mastery/claude.md)
+    [→ Learn Claude (standalone site)](https://rkalani1.github.io/claude/) · [→ In-repo workbench](mastery/claude.md)
 
 -   :material-flag-checkered: **Try the 7-mission learning path**
 
@@ -98,7 +98,7 @@ You do not need to read this site front to back. Start with the row that matches
 
     ---
 
-    41 complete agent recipes, each with a job statement, prompt, tool allowlist, evals, red-team probes, and a safe-launch checklist.
+    45 complete agent recipes, each with a job statement, prompt, tool allowlist, evals, red-team probes, and a safe-launch checklist.
 
     [→ Browse the recipe library](recipes/index.md)
 
@@ -217,4 +217,4 @@ The Task Builder routes this to a **Project + connectors** (read-only) plus a **
 
 ## License
 
-[MIT](https://github.com/example/agents-automations/blob/main/LICENSE). All trademarks belong to their respective owners. This guide is independent and is not endorsed by Anthropic, OpenAI, Google, xAI, GitHub, or Microsoft.
+[MIT](https://github.com/rkalani1/agents-automations/blob/main/LICENSE). All trademarks belong to their respective owners. This guide is independent and is not endorsed by Anthropic, OpenAI, Google, xAI, GitHub, or Microsoft.

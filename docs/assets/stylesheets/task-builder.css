@@ -5,13 +5,6 @@
   text-underline-offset: 0.15em;
 }
 
-.md-tabs__link,
-.md-tabs__link:hover,
-.md-tabs__link:focus {
-  color: #ffffff;
-  opacity: 1;
-}
-
 .tb-app {
   display: grid;
   grid-template-columns: 1fr;

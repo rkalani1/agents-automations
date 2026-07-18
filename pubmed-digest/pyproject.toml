@@ -9,7 +9,7 @@ description = "Deterministic, hallucination-resistant PubMed/preprint literature
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "UW Vascular Neurology / Neuroepidemiology" }]
+authors = [{ name = "rkalani1" }]
 keywords = ["pubmed", "stroke", "neuroepidemiology", "literature", "digest", "obsidian"]
 
 dependencies = [
