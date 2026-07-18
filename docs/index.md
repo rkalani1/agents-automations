@@ -98,7 +98,7 @@ You do not need to read this site front to back. Start with the row that matches
 
     ---
 
-    41 complete agent recipes, each with a job statement, prompt, tool allowlist, evals, red-team probes, and a safe-launch checklist.
+    45 complete agent recipes, each with a job statement, prompt, tool allowlist, evals, red-team probes, and a safe-launch checklist.
 
     [→ Browse the recipe library](recipes/index.md)
 

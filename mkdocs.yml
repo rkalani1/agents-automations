@@ -105,6 +105,46 @@ nav:
       - Local-first setup path: start-here/local-first-path.md
       - Team/org setup path: start-here/team-path.md
       - Safety baseline: start-here/safety-baseline.md
+  - Learn:
+      - Task Builder: task-builder/index.md
+      - Learning path: learning-path/index.md
+      - Mastery:
+          - mastery/index.md
+          - Universal Workbench: mastery/universal-workbench.md
+          - Any AI tool: mastery/any-ai-tool.md
+          - Claude: mastery/claude.md
+          - ChatGPT: mastery/chatgpt.md
+          - Gemini: mastery/gemini.md
+          - Grok: mastery/grok.md
+          - Coding agents: mastery/coding-agents.md
+      - Examples:
+          - examples/index.md
+          - Write a difficult email: examples/write-difficult-email.md
+          - Meeting prep: examples/meeting-prep.md
+          - Weekly status report: examples/weekly-report.md
+          - Research summary with citations: examples/research-summary.md
+          - Personal study plan: examples/study-plan.md
+          - Trip planning: examples/trip-planning.md
+          - Newsletter / inbox triage: examples/newsletter-triage.md
+          - Build a simple website: examples/build-simple-website.md
+          - Build a small app: examples/build-small-app.md
+          - Create a custom assistant: examples/create-custom-assistant.md
+          - Create a native scheduled task: examples/create-native-task.md
+          - Maximize my AI subscription: examples/maximize-my-ai-subscription.md
+          - Workflow in another / unknown AI tool: examples/other-ai-tool-workflow.md
+      - Quickstarts:
+          - quickstarts/index.md
+          - First read-only agent: quickstarts/first-read-only-agent.md
+          - First file-editing agent: quickstarts/first-file-editing-agent.md
+          - First coding agent: quickstarts/first-coding-agent.md
+          - First browser agent: quickstarts/first-browser-agent.md
+          - First MCP agent: quickstarts/first-mcp-agent.md
+          - First Grok task: quickstarts/first-grok-task.md
+  - Choose a tool:
+      - Capability map: capability-map/index.md
+      - Surface router: surface-router/index.md
+      - Memory & preferences: preferences-memory/index.md
+      - No-code automations: no-code-automations/index.md
   - Platforms:
       - platforms/index.md
       - Claude Desktop: platforms/claude-desktop.md
@@ -128,6 +168,7 @@ nav:
       - Writing your own MCP server: mcp/writing.md
       - Remote/custom connectors: mcp/remote-connectors.md
       - MCP security: mcp/security.md
+      - Example MCP toolkit: my-toolkit/mcp-plugins.md
   - Browser & Computer Use:
       - browser-use/index.md
       - Surface comparison: browser-use/comparison.md
@@ -148,56 +189,8 @@ nav:
       - Safety checklists: safety/checklists.md
       - Human-in-the-loop: safety/hitl.md
       - Incident response: safety/incidents.md
-  - Task Builder:
-      - task-builder/index.md
-  - Learning path:
-      - learning-path/index.md
-  - Mastery:
-      - mastery/index.md
-      - Universal Workbench: mastery/universal-workbench.md
-      - Any AI tool: mastery/any-ai-tool.md
-      - Claude: mastery/claude.md
-      - ChatGPT: mastery/chatgpt.md
-      - Gemini: mastery/gemini.md
-      - Grok: mastery/grok.md
-      - Coding agents: mastery/coding-agents.md
-  - Capability map:
-      - capability-map/index.md
-  - Examples:
-      - examples/index.md
-      - Write a difficult email: examples/write-difficult-email.md
-      - Meeting prep: examples/meeting-prep.md
-      - Weekly status report: examples/weekly-report.md
-      - Research summary with citations: examples/research-summary.md
-      - Personal study plan: examples/study-plan.md
-      - Trip planning: examples/trip-planning.md
-      - Newsletter / inbox triage: examples/newsletter-triage.md
-      - Build a simple website: examples/build-simple-website.md
-      - Build a small app: examples/build-small-app.md
-      - Create a custom assistant: examples/create-custom-assistant.md
-      - Create a native scheduled task: examples/create-native-task.md
-      - Maximize my AI subscription: examples/maximize-my-ai-subscription.md
-      - Workflow in another / unknown AI tool: examples/other-ai-tool-workflow.md
-  - No-code automations:
-      - no-code-automations/index.md
-  - Memory & preferences:
-      - preferences-memory/index.md
-  - Surface router:
-      - surface-router/index.md
-  - Quickstarts:
-      - quickstarts/index.md
-      - First read-only agent: quickstarts/first-read-only-agent.md
-      - First file-editing agent: quickstarts/first-file-editing-agent.md
-      - First coding agent: quickstarts/first-coding-agent.md
-      - First browser agent: quickstarts/first-browser-agent.md
-      - First MCP agent: quickstarts/first-mcp-agent.md
-      - First Grok task: quickstarts/first-grok-task.md
   - Recipes:
       - recipes/index.md
-  - Clinical Workflows:
-      - Word-to-PPT Blueprint: recipes/word-to-ppt.md
-      - Medical Infographics Guide: recipes/medical-infographics.md
-      - My AI Toolkit: my-toolkit/mcp-plugins.md
   - Agent Factory:
       - agent-factory/index.md
       - Operating model: agent-factory/factory-operating-model.md
@@ -226,7 +219,6 @@ nav:
       - Source map: source-map.md
       - Source audit: source-audit.md
       - Roadmap: roadmap.md
-      - User requirements traceability: product-requirements/user-requirements-traceability.md
       - Changelog: changelog.md
       - Decision records:
           - decision-records/index.md

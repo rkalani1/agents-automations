@@ -1,5 +1,7 @@
 # Universal AI Mastery & Interactive Workbench
 
+> **Last verified:** 2026-07-18 (page structure; embedded product claims not individually re-verified) · **Drift risk:** high — vendor UIs and plan features drift; the official pages linked throughout are canonical
+
 A model-agnostic playground and setup guide. Select your preferred AI model at the top, and the interactive workbench will dynamically configure its task prompts, setup checklists, toolkits, and surface recommendations for that provider.
 
 ---

@@ -837,6 +837,9 @@ Provide:
       const active = button.getAttribute(attribute) === value;
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-selected", active ? "true" : "false");
+      if (button.getAttribute("role") === "tab") {
+        button.setAttribute("tabindex", active ? "0" : "-1");
+      }
     });
   }
 
@@ -1587,6 +1590,21 @@ After the answer:
       activeModel = tab.getAttribute("data-model") || "chatgpt";
       setActiveChoice(modelTabs, "data-model", activeModel);
       renderModelWorkbench();
+    });
+  });
+
+  // Arrow-key navigation for the model tablist (roving tabindex)
+  modelTabs.forEach((tab, index) => {
+    tab.addEventListener("keydown", (event) => {
+      let next = null;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % modelTabs.length;
+      else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + modelTabs.length) % modelTabs.length;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = modelTabs.length - 1;
+      if (next === null) return;
+      event.preventDefault();
+      modelTabs[next].focus();
+      modelTabs[next].click();
     });
   });
 

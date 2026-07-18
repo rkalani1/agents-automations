@@ -1,9 +1,11 @@
 # Claude Mastery & Interactive Workbench
 
+> **Last verified:** 2026-07-18 (page structure; embedded product claims not individually re-verified) · **Drift risk:** high — the standalone Learn Claude site is the maintained version of this material
+
 A practical, step-by-step track and interactive playground for getting full value from Claude.
 
-!!! info "Looking for the full Claude mastery track?"
-    The complete beginner-to-expert Claude guide — setup paths, Projects, memory, Skills, connectors, and Claude Code — lives on its own standalone site: **[Learn Claude](https://rkalani1.github.io/claude/)**. This page keeps only the interactive workbench and quick-task prompts so the two sites don't drift apart.
+!!! info "The canonical Claude track lives on the standalone site"
+    The maintained beginner-to-expert Claude guide — setup paths, Projects, memory, Skills, connectors, and Claude Code — is **[Learn Claude](https://rkalani1.github.io/claude/)**. This page embeds a snapshot of that material as an interactive workbench; where the two disagree, the standalone site is current.
 
 ---
 

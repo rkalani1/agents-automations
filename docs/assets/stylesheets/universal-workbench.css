@@ -1,10 +1,11 @@
-.universal-workbench /* Learn Claude — cool modern editorial aesthetic
+/* Learn Claude — cool modern editorial aesthetic
    Typography: Instrument Serif (display), .universal-workbench Geist (UI), .universal-workbench Geist Mono (eyebrow/mono)
    Palette: paper-white with electric-indigo accent, .universal-workbench OKLCH throughout */
 
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap");
+/* No external font imports: the site makes no third-party requests.
+   The font stacks below fall back to system serif/sans/mono faces. */
 
-:root {
+.universal-workbench {
   --paper:       oklch(0.985 0.003 255);
   --paper-2:     oklch(0.955 0.005 255);
   --paper-warm:  oklch(0.97 0.004 255);
@@ -787,7 +788,8 @@ details { border-radius: var(--radius); }.universal-workbench details > summary 
     background: var(--line-soft);
   }.universal-workbench .surface-card { scroll-snap-align: start; }.universal-workbench .source-list { columns: 1; }
 }@media (max-width: 560px) {.universal-workbench .button { width: 100%; }.universal-workbench .button.small { width: auto; }.universal-workbench .official-links .button { width: 100%; }.universal-workbench .source-list { columns: 1; }.universal-workbench .model-fit summary { flex-direction: column; gap: 0.2rem; }.universal-workbench .glossary-grid { grid-template-columns: 1fr; }.universal-workbench .section h2 { font-size: clamp(1.7rem, 7vw, 2.4rem); }
-}.universal-workbench /* Print */
+}
+/* Print */
 @media print {
   .site-header,
   .toast,
@@ -853,4 +855,20 @@ details { border-radius: var(--radius); }.universal-workbench details > summary 
   color: #ffffff;
   border-color: var(--rust-deep);
   box-shadow: 0 4px 12px oklch(0.4 0.2 268 / 0.35);
+}
+
+/* Dark mode: follow Material's slate scheme */
+[data-md-color-scheme="slate"] .universal-workbench {
+  --paper:       oklch(0.22 0.012 265);
+  --paper-2:     oklch(0.26 0.012 265);
+  --paper-warm:  oklch(0.24 0.012 265);
+  --surface:     oklch(0.28 0.012 265);
+  --ink:         oklch(0.93 0.008 255);
+  --muted:       oklch(0.72 0.01 255);
+  --muted-2:     oklch(0.6 0.01 255);
+  --line:        oklch(0.36 0.01 265);
+  --line-soft:   oklch(0.31 0.01 265);
+  --rust:        oklch(0.74 0.16 268);
+  --rust-soft:   oklch(0.32 0.06 268);
+  --rust-deep:   oklch(0.86 0.1 268);
 }
