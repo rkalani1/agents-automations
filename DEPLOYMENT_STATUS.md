@@ -10,7 +10,7 @@
 | Last verified | 2026-05-06 |
 | Build status | ✅ Build + deploy green on `main` |
 | Strict build | `mkdocs build --strict` exits 0. The build emits an upstream Material for MkDocs informational banner about the future MkDocs 2.0 release; this is normal output, not a project warning. |
-| Recipe nav pattern | The 41 recipes are accessed via the categorized [Recipes index](/agents-automations/recipes/) instead of being listed individually in the top-level nav. The build prints INFO-level notices for these pages — this is intentional. See [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md). |
+| Recipe nav pattern | The 41 recipes are accessed via the categorized [Recipes index](docs/recipes/index.md) instead of being listed individually in the top-level nav. The build prints INFO-level notices for these pages — this is intentional. See [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md). |
 
 ## How to check current status
 

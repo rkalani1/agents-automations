@@ -138,7 +138,7 @@ All notable changes to this guide are documented here. Format loosely follows [K
 - Source map (`docs/source-map.md`): expanded with additional Anthropic, OpenAI, Google, GitHub, and MCP references used by the new content.
 
 ### Verified
-- `mkdocs build --strict` exits 0. The build emits the upstream Material for MkDocs informational banner about the future MkDocs 2.0 release — this is upstream output from the theme, not a project warning. The build also prints INFO-level notices for the 41 recipes that are intentionally accessed via the categorized [Recipes index](/agents-automations/recipes/) rather than the top-level nav (see [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md)).
+- `mkdocs build --strict` exits 0. The build emits the upstream Material for MkDocs informational banner about the future MkDocs 2.0 release — this is upstream output from the theme, not a project warning. The build also prints INFO-level notices for the 41 recipes that are intentionally accessed via the categorized [Recipes index](docs/recipes/index.md) rather than the top-level nav (see [ADR 0004](docs/decision-records/0004-recipe-nav-pattern.md)).
 - GitHub Pages production deployment via `actions/deploy-pages@v4` succeeds from `main`.
 - Live site: https://rkalani1.github.io/agents-automations/.
 

@@ -40,7 +40,7 @@ The site-rendered version of this file lives at [`docs/product-requirements/user
 | 7 | ChatGPT has a full mastery track. | [`docs/mastery/chatgpt.md`](docs/mastery/chatgpt.md) | complete |
 | 8 | Gemini has a full mastery track. | [`docs/mastery/gemini.md`](docs/mastery/gemini.md) | complete |
 | 9 | Grok has a no-API path + optional dev path. | [`docs/mastery/grok.md`](docs/mastery/grok.md) — Beginner→Advanced is non-API; Expert section covers xAI API | complete |
-| 10 | Perplexity has a mastery path covering research/Spaces/sources/Pages + optional dev. | [`docs/mastery/perplexity.md`](docs/mastery/perplexity.md) | complete |
+| 10 | Perplexity has a mastery path covering research/Spaces/sources/Pages + optional dev. | Covered inside [`docs/mastery/any-ai-tool.md`](docs/mastery/any-ai-tool.md); there is no standalone `perplexity.md` page. | partial |
 | 11 | "Any AI tool" path exists. | [`docs/mastery/any-ai-tool.md`](docs/mastery/any-ai-tool.md) | complete |
 | 12 | Universal 7-mission learning path. | [`docs/learning-path/index.md`](docs/learning-path/index.md) | complete |
 | 13 | Provider capability map covering Beginner/Intermediate/Advanced/Expert/Free/Sub/Ent/Dev-API/fallback. | [`docs/capability-map/index.md`](docs/capability-map/index.md) | complete |
